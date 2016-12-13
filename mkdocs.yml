@@ -1,0 +1,24 @@
+site_name: Armaldio
+theme: cosmo
+pages:
+  - Home: index.md
+  - Project list:
+    - Plugin Manager: plugin-manager.md
+    - Electron: electron.md
+extra_css:
+  - css/home.css
+
+extra_javascript:
+  - js/home.js
+
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: false
+        separator: "_"
+    - sane_lists
+    - abbr
+    - def_list
+    - codehilite
+    - meta
+    - wikilinks
