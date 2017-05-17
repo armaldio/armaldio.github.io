@@ -3,6 +3,11 @@
     <title>Armaldio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme/dark.css" id="theme">
 </head>
 
 <body>
@@ -118,13 +123,6 @@
                 <i class="mail icon"></i>
                 Email
             </a>
-            <script>
-				$('.dropdown')
-					.dropdown({
-						action: 'hide'
-					})
-				;
-            </script>
         </div>
 
         <div class="ui segment center aligned" data-aos="fade-up">
@@ -291,10 +289,7 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-
     </div>
 
     <br>
@@ -331,7 +326,6 @@
 </div>
 
 <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
 <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -339,10 +333,14 @@
 <script src="semantic/dist/semantic.min.js"></script>
 <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="theme/dark.css" id="theme">
 <script>
 	$('.progress').progress();
+
+	$('.dropdown')
+		.dropdown({
+			action: 'hide'
+		})
+	;
 
 	var theme = "night";
 
