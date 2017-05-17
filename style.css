@@ -13,7 +13,7 @@ body {
     margin-bottom: 0.75em;
 }
 
-#theme-toggle {
+#theme-toggle, #blog {
     margin-right: 15px;
     margin-top: 15px;
 }

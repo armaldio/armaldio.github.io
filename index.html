@@ -3,24 +3,15 @@
     <title>Armaldio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="theme/dark.css" id="theme">
 </head>
 
 <body>
 
 <button id="theme-toggle" class="ui toggle button right floated">
     Night
+</button>
+<button id="blog" class="ui toggle button right floated">
+    Blog
 </button>
 
 <div class="ui container " id="container">
@@ -102,10 +93,6 @@
                 <i class="twitter icon"></i>
                 Twitter
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/quentin-goinaud-105922111/" class="ui linkedin button big">
-                <i class="linkedin icon"></i>
-                LinkedIn
-            </a>
             <a target="_blank" href="https://www.youtube.com/channel/UC2NMlBmS-rttQ16lb6AKFYg"
                class="ui youtube button big">
                 <i class="youtube icon"></i>
@@ -115,28 +102,22 @@
                 <i class="github icon"></i>
                 Github
             </a>
+            <a target="_blank" href="https://www.linkedin.com/in/quentin-goinaud-105922111/"
+               class="ui linkedin button big">
+                <i class="linkedin icon"></i>
+                LinkedIn
+            </a>
             <button class="ui purple button big">
-                <img src="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png" title="Discorde" width="16"
+                <img src="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png" title="Discorde"
+                     width="16"
                      height="16">
                 Armaldio#5087
             </button>
 
-            <div class="ui dropdown button big right floated">
-                <div class="text">Contact me</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                    <div class="header">
-                        <i class="tags icon"></i>
-                        Related to ...
-                    </div>
-                    <a class="item" target="_blank" href="mailto:quentin.goinaud@epitech.eu"><i class="home icon"></i>
-                        School</a>
-                    <a class="item" target="_blank" href="mailto:armaldio@gmail.com"><i class="users icon"></i> Public
-                        Projects</a>
-                    <a class="item" target="_blank" href="mailto:quentin.goinaud@gmail.com"><i class="travel icon"></i>
-                        Personal</a>
-                </div>
-            </div>
+            <a target="_blank" href="mailto:armaldio@gmail.com" class="ui green button big">
+                <i class="mail icon"></i>
+                Email
+            </a>
             <script>
 				$('.dropdown')
 					.dropdown({
@@ -192,7 +173,8 @@
                         <br>
                         <br>
 
-                        <a class="ui green button" target="_blank" href="https://armaldio.itch.io/construct-addon-manager">
+                        <a class="ui green button" target="_blank"
+                           href="https://armaldio.itch.io/construct-addon-manager">
                             <i class="icon heart"></i>
                             View project
                         </a>
@@ -265,7 +247,8 @@
             <div class="ui equal height three column grid">
                 <div class="column">
                     <div class="ui segment green" data-aos="fade-left">
-                        <img class="ui tiny centered image" src="https://avatars2.githubusercontent.com/u/26804094?v=3&s=200">
+                        <img class="ui tiny centered image"
+                             src="https://avatars2.githubusercontent.com/u/26804094?v=3&s=200">
                         <h3 class="ui header">LiveSMS</h3>
 
                         <p>Open-source, self-hostable Pushbullet clone</p>
@@ -321,14 +304,49 @@
     </script>
 
     <br id="end">
+
+    <!--
+    <div id="disqus_thread"></div>
+    <script>
+
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+		(function () { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://armaldio.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+         -->
 </div>
 
+<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme/dark.css" id="theme">
 <script>
 	$('.progress').progress();
 
 	var theme = "night";
 
-	$('#theme-toggle').on("click", function() {
+	$('#theme-toggle').on("click", function () {
 		if (theme === "light") {
 			document.getElementById('theme-toggle').innerHTML = "Night";
 			document.getElementById("theme").href             = "theme/dark.css";
@@ -344,6 +362,8 @@
 
 	AOS.init();
 </script>
+
+<!-- <script id="dsq-count-scr" src="//armaldio.disqus.com/count.js" async></script> -->
 
 </body>
 
