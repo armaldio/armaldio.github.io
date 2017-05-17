@@ -3,10 +3,211 @@
     <title>Armaldio</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<p>Hello world</p>
+
+<button id="theme-toggle" class="ui toggle button right floated sticky">
+   Night
+</button>
+
+<div class="ui container " id="container">
+
+    <div class="ui">
+        <div class="ui segment center aligned">
+
+            <img src="img/logo.png" alt="Logo" class="ui centered tiny rounded image">
+            <br>
+            <p class="ui centered">Please, if you like my work, support me with a small donation <i class="heart icon pink"></i>
+            </p>
+            <a href="https://pledgie.com/campaigns/32831"><img class="aligncenter" src="https://i1.wp.com/pledgie.com/campaigns/32831.png?w=800&amp;ssl=1" alt="Click here to lend your support to: Construct 2 Plugin Manager and make a donation at pledgie.com !" border="0" data-recalc-dims="1"></a>
+        </div>
+
+        <div class="ui two column grid">
+            <div class="column">
+                <div class="ui segment">
+                    <h1 class="ui header">Web</h1>
+
+                    <div class="ui indicating progress" data-value="75" data-total="100">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="label">HTML/CSS 75%</div>
+                    </div>
+
+                    <div class="ui indicating progress" data-value="100" data-total="100">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="label">Javascript 100%</div>
+                    </div>
+
+                    <div class="ui indicating progress" data-value="100" data-total="100">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="label">Node.js / Electron 100%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui segment">
+                    <h1 class="ui header">Native</h1>
+                    <div class="ui indicating progress" data-value="65" data-total="100">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="label">C/C++ 65%</div>
+                    </div>
+
+                    <div class="ui indicating progress" data-value="50" data-total="100">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="label">C# / Unity 50%</div>
+                    </div>
+
+                    <div class="ui indicating progress" data-value="25" data-total="100">
+                        <div class="bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="label">Android/Java 25%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui segment center aligned">
+            <button class="ui big red button">Office</button>
+            <button class="ui big grey button">Unity</button>
+            <button class="ui big brown button">Construct 2</button>
+            <button class="ui big blue button">PHP</button>
+            <button class="ui big green button">Python</button>
+            <button class="ui big blue button">Photoshop</button>
+            <button class="ui big orange button">OCaml</button>
+            <button class="ui big blue button">Cinema 4D</button>
+            <button class="ui big green button">Arduino</button>
+            <button class="ui big orange button">Git</button>
+            <button class="ui big yellow button">Linux</button>
+            <button class="ui big black button">Bash</button>
+            <button class="ui big blue button">SQL</button>
+        </div>
+
+        <div class="ui segment center aligned">
+
+            <h1 class="ui header">Projects</h1>
+
+            <div class="ui equal height three column grid">
+                <div class="column">
+                    <div class="ui segment teal">
+                        <img class="ui tiny centered image" src="img/electron-logo.png">
+                        <h3 class="ui header">Electron for Construct 2</h3>
+
+                        <p>Electron for Construct 2 is a set of tools that allow you make your construct 2 games able to
+                            run with Electron</p>
+
+                        <button class="ui green button">
+                            <i class="icon heart"></i>
+                            View project
+                        </button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui segment brown">
+                        <img class="ui tiny centered image" src="img/pm.ico">
+                        <h3 class="ui header">Addon Manager for Construct 2</h3>
+
+                        <p>An addon manager that allow you to easily manage your Construct 2 addons</p>
+
+                        <button class="ui green button">
+                            <i class="icon heart"></i>
+                            View project
+                        </button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui segment blue">
+                        <img class="ui tiny centered image" src="img/discordandc2.png">
+                        <h3 class="ui header">Discord</h3>
+
+                        <p>Join my Discord channel about Construct 2</p>
+
+                        <button class="ui green button">
+                            <i class="icon heart"></i>
+                            Join
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui equal height three column grid">
+                <div class="column">
+                    <div class="ui segment red">
+                        <img class="ui tiny centered image" src="img/npm.png">
+                        <h3 class="ui header">Node modules</h3>
+
+                        <p>I've wrote some Node extension modules to give you the ability to interact with Construct 2
+                            from your Node-based project</p>
+
+                        <button class="ui green button">
+                            <i class="icon heart"></i>
+                            View modules
+                        </button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui segment grey">
+                        <img class="ui tiny centered image" src="img/construct2.png">
+                        <h3 class="ui header">Construct 2 Plugins</h3>
+
+                        <p>You can find a lot of C2 plugins I made on my Github profile</p>
+
+                        <button class="ui green button">
+                            <i class="icon heart"></i>
+                            View plugins
+                        </button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui segment green">
+                        <img class="ui tiny centered image" src="img/xtruct.ico">
+                        <h3 class="ui header">Xtruct</h3>
+
+                        <p>An open-source 2d hackable game engine based on Phaser with a full editor</p>
+
+                        <button class="ui green button">
+                            <i class="icon heart"></i>
+                            View project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <br id="end">
+</div>
+
+<script>
+	$('.progress').progress();
+
+	$('.ui.sticky')
+		.sticky()
+	;
+</script>
+
 </body>
 
 </html>

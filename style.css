@@ -1,0 +1,21 @@
+body {
+    /*
+    background-color: #222;
+    color: #fff;
+     */
+}
+
+#container {
+    padding-top: 25px;
+}
+
+.ui.button {
+    margin-bottom: 0.75em;
+}
+
+#theme-toggle {
+    /*
+    margin-right: 15px;
+    margin-top: 15px;
+    */
+}
