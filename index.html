@@ -17,7 +17,7 @@
 <body>
 
 <button id="theme-toggle" class="ui toggle button right floated">
-   Night
+    Night
 </button>
 
 <div class="ui container " id="container">
@@ -27,9 +27,17 @@
 
             <img src="img/logo.png" alt="Logo" class="ui centered tiny rounded image">
             <br>
-            <p class="ui centered">Please, if you like my work, support me with a small donation <i class="heart icon pink"></i>
+            <p>Hello there, </p>
+            <p>I'm Quentin GOINAUD, a French guy that loves to code stuff and things</p>
+            <p>I'm currently studying at <b>Epitech Lyon</b>, a French IT school (second year)</p>
+            <br>
+            <p class="ui centered">If you like my work, support me with a small donation <i
+                    class="heart icon pink"></i>
             </p>
-            <a href="https://pledgie.com/campaigns/32831"><img class="aligncenter" src="https://i1.wp.com/pledgie.com/campaigns/32831.png?w=800&amp;ssl=1" alt="Click here to lend your support to: Construct 2 Plugin Manager and make a donation at pledgie.com !" border="0" data-recalc-dims="1"></a>
+            <a href="https://pledgie.com/campaigns/32831"><img class="aligncenter"
+                                                               src="https://i1.wp.com/pledgie.com/campaigns/32831.png?w=800&amp;ssl=1"
+                                                               alt="Click here to lend your support to: Construct 2 Plugin Manager and make a donation at pledgie.com !"
+                                                               border="0" data-recalc-dims="1"></a>
         </div>
 
         <div class="ui two column grid">
@@ -87,6 +95,55 @@
         </div>
 
         <div class="ui segment center aligned">
+            <a target="_blank" href="https://twitter.com/armaldio" class="ui twitter button big">
+                <i class="twitter icon"></i>
+                Twitter
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/quentin-goinaud-105922111/" class="ui linkedin button big">
+                <i class="linkedin icon"></i>
+                LinkedIn
+            </a>
+            <a target="_blank" href="https://www.youtube.com/channel/UC2NMlBmS-rttQ16lb6AKFYg"
+               class="ui youtube button big">
+                <i class="youtube icon"></i>
+                YouTube
+            </a>
+            <a target="_blank" href="https://github.com/armaldio" class="ui github button big">
+                <i class="github icon"></i>
+                Github
+            </a>
+            <a target="_blank" href="https://github.com/armaldio" class="ui purple button big">
+                <img src="https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png" title="Discorde" width="16"
+                     height="16">
+                Armaldio#5087
+            </a>
+
+            <div class="ui dropdown button big">
+                <div class="text">Contact me</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="header">
+                        <i class="tags icon"></i>
+                        Related to ...
+                    </div>
+                    <a class="item" target="_blank" href="mailto:quentin.goinaud@epitech.eu"><i class="home icon"></i>
+                        School</a>
+                    <a class="item" target="_blank" href="mailto:armaldio@gmail.com"><i class="users icon"></i> Public
+                        Projects</a>
+                    <a class="item" target="_blank" href="mailto:quentin.goinaud@gmail.com"><i class="travel icon"></i>
+                        Personal</a>
+                </div>
+            </div>
+            <script>
+				$('.dropdown')
+					.dropdown({
+						action: 'hide'
+					})
+				;
+            </script>
+        </div>
+
+        <div class="ui segment center aligned">
             <button class="ui big red button">Office</button>
             <button class="ui big grey button">Unity</button>
             <button class="ui big brown button">Construct 2</button>
@@ -114,6 +171,7 @@
 
                         <p>Electron for Construct 2 is a set of tools that allow you make your construct 2 games able to
                             run with Electron</p>
+                        <br>
 
                         <button class="ui green button">
                             <i class="icon heart"></i>
@@ -127,6 +185,8 @@
                         <h3 class="ui header">Addon Manager for Construct 2</h3>
 
                         <p>An addon manager that allow you to easily manage your Construct 2 addons</p>
+                        <br>
+                        <br>
 
                         <button class="ui green button">
                             <i class="icon heart"></i>
@@ -136,15 +196,20 @@
                 </div>
                 <div class="column">
                     <div class="ui segment blue">
+
                         <img class="ui tiny centered image" src="img/discordandc2.png">
                         <h3 class="ui header">Discord</h3>
 
                         <p>Join my Discord channel about Construct 2</p>
+                        <br><br>
 
                         <button class="ui green button">
                             <i class="icon heart"></i>
                             Join
                         </button>
+                        <br>
+                        <img class="ui"
+                             src="https://discordbadges-armaldio.rhcloud.com/badge/discord/online?id=116497549237551109&title=Construct%20Community">
                     </div>
                 </div>
             </div>
@@ -170,6 +235,7 @@
                         <h3 class="ui header">Construct 2 Plugins</h3>
 
                         <p>You can find a lot of C2 plugins I made on my Github profile</p>
+                        <br>
 
                         <button class="ui green button">
                             <i class="icon heart"></i>
@@ -183,6 +249,7 @@
                         <h3 class="ui header">Xtruct</h3>
 
                         <p>An open-source 2d hackable game engine based on Phaser with a full editor</p>
+                        <br>
 
                         <button class="ui green button">
                             <i class="icon heart"></i>
@@ -197,15 +264,16 @@
     </div>
 
     <br>
+    <script type="text/javascript">
+		var d = new Date();
+		document.write("<p id='footer'>" + d.getFullYear() + " Copyright &copy Armaldio</p>")
+    </script>
+
     <br id="end">
 </div>
 
 <script>
 	$('.progress').progress();
-
-	$('.ui.sticky')
-		.sticky()
-	;
 </script>
 
 </body>
