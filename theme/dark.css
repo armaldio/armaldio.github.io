@@ -1,0 +1,16 @@
+body {
+    background: #222;
+}
+
+.segment {
+    color: #fff2f2 !important;
+    background: #333 !important;
+}
+
+.column .segment {
+    background: #222 !important;
+}
+
+h1, h3, .label, #footer {
+    color: #fff !important;
+}

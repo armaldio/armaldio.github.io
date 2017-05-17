@@ -12,6 +12,7 @@
     <script src="semantic/dist/semantic.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme/dark.css" id="theme">
 </head>
 
 <body>
@@ -321,6 +322,22 @@
 
 <script>
 	$('.progress').progress();
+
+	var theme = "night";
+
+	$('#theme-toggle').on("click", function() {
+		if (theme === "light") {
+			document.getElementById('theme-toggle').innerHTML = "Night";
+			document.getElementById("theme").href             = "theme/dark.css";
+			theme                                             = "dark";
+		}
+		else {
+			document.getElementById('theme-toggle').innerHTML = "Light";
+			document.getElementById("theme").href             = "";
+			theme                                             = "light";
+		}
+		return false;
+	});
 </script>
 
 </body>
