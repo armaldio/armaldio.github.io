@@ -16,8 +16,13 @@ body {
 #theme-toggle, #blog {
     margin-right: 15px;
     margin-top: 15px;
+    z-index: 10;
 }
 
 #footer {
     text-align: center;
+}
+
+img.discord {
+    width: 100%;
 }
