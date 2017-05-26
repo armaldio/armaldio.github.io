@@ -1,8 +1,5 @@
 body {
-    /*
-    background-color: #222;
-    color: #fff;
-     */
+
 }
 
 #container {
@@ -25,4 +22,8 @@ body {
 
 img.discord {
     width: 100%;
+}
+
+.ui.segment {
+    font-size: 18px;
 }

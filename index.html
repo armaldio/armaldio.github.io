@@ -27,9 +27,15 @@
 
             <img src="img/logo.png" alt="Logo" class="ui centered tiny rounded image">
             <br>
-            <p>Hello there, </p>
-            <p>I'm Quentin GOINAUD, a French guy that loves to code stuff and things</p>
+            <p>I'm <b>Quentin GOINAUD</b>, a French guy that loves to code stuff and things</p>
             <p>I'm currently studying at <b>Epitech Lyon</b>, a French IT school (second year)</p>
+            <br>
+            <p><i><b>I am looking for a part-time in Lyon, France from October 2017 to April 2018 (modular duration)</b></i></p>
+            <a target="_blank" href="mailto:armaldio@gmail.com" class="ui green button big">
+                <i class="mail icon"></i>
+                Email me
+            </a>
+            <br>
             <br>
             <p class="ui centered">If you like my work, support me with a small donation <i
                     class="heart icon pink"></i>
@@ -39,15 +45,12 @@
                                                                alt="Click here to lend your support to: Construct 2 Plugin Manager and make a donation at pledgie.com !"
                                                                border="0" data-recalc-dims="1"></a>
             <br>
+            <br>
             <button id="theme-toggle" class="ui toggle button big ">
-                Night
+                Lights off
             </button>
             <a id="blog" class="ui toggle button big" href="http://blog.armaldio.xyz">
                 Blog
-            </a>
-            <a target="_blank" href="mailto:armaldio@gmail.com" class="ui green button big">
-                <i class="mail icon"></i>
-                Email me
             </a>
         </div>
 
@@ -354,12 +357,12 @@
 
 	$('#theme-toggle').on("click", function () {
 		if (theme === "light") {
-			document.getElementById('theme-toggle').innerHTML = "Night";
+			document.getElementById('theme-toggle').innerHTML = 'Lights off';
 			document.getElementById("theme").href             = "theme/dark.css";
 			theme                                             = "dark";
 		}
 		else {
-			document.getElementById('theme-toggle').innerHTML = "Light";
+			document.getElementById('theme-toggle').innerHTML = "Lights on";
 			document.getElementById("theme").href             = "";
 			theme                                             = "light";
 		}
