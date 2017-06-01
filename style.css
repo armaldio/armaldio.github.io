@@ -1,5 +1,5 @@
 body {
-
+    background: no-repeat fixed;
 }
 
 #container {
@@ -26,4 +26,18 @@ img.discord {
 
 .ui.segment {
     font-size: 18px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.ui.modal>.content {
+    background-color: #222;
+    color: #fff;
+}
+
+.ui.modal>.header:not(.ui) {
+    background: #333;
+    color: #fff;
 }

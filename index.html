@@ -313,7 +313,10 @@
         <div class="ui equal height one column stackable grid">
             <div class="column">
                 <div class="ui segment" data-aos="fade-left">
-                    <p>Currently no feedback :(</p>
+                    <span class="italic">&laquo; My experience in working with Quentin has been a very positive as he seems to be a very professional and kind individual who takes a lot of pride in his work and has a lot of passion for the industry he is involved in. &raquo;</span>
+                    <br>
+                    <br>
+                    <button class="ui button green open-modal" data-modal="weuk">View</button>
                 </div>
             </div>
         </div>
@@ -354,7 +357,48 @@
         <a target="_blank" onmouseover="this.href=this.href.replace(/x/g,'');"
            href="mailto:xarmaldiox@gmail.com?Subject=%5BFeedback%5D"
            class="ui big button green center aligned">Add your
-            own></a>
+            own</a>
+    </div>
+</div>
+
+<div class="ui modal weuk">
+    <i class="close icon"></i>
+    <div class="header">
+        Pegasus Whirlpool Baths Ltd - Daniel Jacques
+    </div>
+    <div class="content">
+        <blockquote class="description">
+            &laquo; Firstly I would like to describe briefly what I was trying to achieve using Construct 2 (C2) and how Quentin
+            helped me achieve it.
+            <br>
+            <br>
+            I have been developing an app using C2 and required it to have an e-mail facility attached to it. I came
+            across Quentin’s e-mail plugin on the Scirra website and followed his instructions for installation and
+            configuration for it. After completing all the steps in his tutorial, I could not get the plugin to work so
+            I contacted Quentin through his personal email account to ask for his help. He got back to me with a very
+            prompt reply and offered his assistance. I explained my problems to Quentin and told him what I was trying
+            to achieve, he got a good understanding immediately and set to work on a solution straight away. This was
+            not a paid for service and I was extremely grateful for his help.
+            <br>
+            <br>
+            Quentin diagnosed a few potential problems with what I was doing wrong and we set about putting them right.
+            There were many issues with my server that Quentin dealt with promptly in his own personal time. By this
+            time Quentin and myself have had many email correspondences where he always replied promptly and with
+            excellent professional advice and suggestions, his attitude towards a problem that was not his own was
+            exemplary and he was as helpful to me as possible. It took a total of three days of Quentin’s own time to
+            come up with a complete solution. He researched and worked on the issues I had off his own back and came up
+            with all the solutions required, he even re-coded parts of the plugin so it would accommodate my
+            requirements, which I found very inspiring.
+            <br>
+            <br>
+            In conclusion I would like to state that my experience in working with Quentin has been a very positive as
+            he seems to be a very professional and kind individual who takes a lot of pride in his work and has a lot of
+            passion for the industry he is involved in. He has an obvious ability in coding and problem solving skills
+            that he has selflessly put to use in helping myself which has been a very kind thing to do. It has been a
+            pleasure working with Quentin and I would highly recommend him as a IT professional if he were to offer his
+            services in the future. &raquo;
+
+        </blockquote>
     </div>
 </div>
 
@@ -406,6 +450,15 @@
 		return false;
 	});
 
+	$(".open-modal").on("click", function (el) {
+		var target = el.target;
+		var modal = $(target).data("modal");
+
+		console.log(modal);
+
+		$(".weuk.modal").modal('show');
+	});
+
 	//AOS.init();
 </script>
 
@@ -426,6 +479,26 @@
 
 	ga('create', 'UA-85914929-1', 'auto');
 	ga('send', 'pageview');
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.0.1/trianglify.min.js"></script>
+
+<script>
+
+	window.addEventListener('resize', function () {
+		var pattern = Trianglify({
+			width       : window.innerWidth,
+			height      : window.innerHeight,
+			x_colors    : ["#070707", "#141414", "#212121", "#2d2d2d", "#3a3a3a"],
+			stroke_width: 1.7,
+			//points      : [e.pageX, e.pageY]
+		});
+		//document.body.appendChild(pattern.svg())
+		$(document.body).css("background", "no-repeat fixed url(" + pattern.png() + ")");
+    })
+
+
 
 </script>
 
