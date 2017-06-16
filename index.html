@@ -1,7 +1,11 @@
-<html xmlns="http://www.w3.org/2007/XMLSchema-versioning" xml:lang="en">
+<!doctype html>
+<html amp xmlns="http://www.w3.org/2007/XMLSchema-versioning" xml:lang="en">
 <head>
     <title>Armaldio | Portfolio</title>
 
+    <link rel="canonical" href="https://armaldio.xyz"/>
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Language" content="en"/>
@@ -17,6 +21,68 @@
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="theme/dark.css" id="theme"/>
+
+    <!--<style amp-boilerplate>body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+        to {
+            visibility: visible
+        }
+    }
+
+    @-moz-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+        to {
+            visibility: visible
+        }
+    }
+
+    @-ms-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+        to {
+            visibility: visible
+        }
+    }
+
+    @-o-keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+        to {
+            visibility: visible
+        }
+    }
+
+    @keyframes -amp-start {
+        from {
+            visibility: hidden
+        }
+        to {
+            visibility: visible
+        }
+    }</style>
+    <noscript>
+        <style amp-boilerplate>body {
+            -webkit-animation: none;
+            -moz-animation: none;
+            -ms-animation: none;
+            animation: none
+        }</style>
+    </noscript>-->
+
+    <!-- <script async src="https://cdn.ampproject.org/v0.js"></script> -->
 </head>
 
 <body>
@@ -145,11 +211,14 @@
             <button class="ui big red button">JSON</button>
             <button class="ui big orange button">OCaml</button>
             <button class="ui big blue button">Cinema 4D</button>
-            <button class="ui big green button">Arduino</button>
+            <button class="ui big purple button">Arduino</button>
             <button class="ui big orange button">Git</button>
             <button class="ui big yellow button">Linux</button>
             <button class="ui big RED button">Bash</button>
             <button class="ui big blue button">SQL</button>
+            <button class="ui big green button">Progressive Web Apps</button>
+            <button class="ui big red button">Service workers</button>
+            <button class="ui big pink button">Semantic-ui</button>
         </div>
 
         <div class="ui segment center aligned">
@@ -368,7 +437,8 @@
     </div>
     <div class="content">
         <blockquote class="description">
-            &laquo; Firstly I would like to describe briefly what I was trying to achieve using Construct 2 (C2) and how Quentin
+            &laquo; Firstly I would like to describe briefly what I was trying to achieve using Construct 2 (C2) and how
+            Quentin
             helped me achieve it.
             <br>
             <br>
@@ -452,7 +522,7 @@
 
 	$(".open-modal").on("click", function (el) {
 		var target = el.target;
-		var modal = $(target).data("modal");
+		var modal  = $(target).data("modal");
 
 		console.log(modal);
 
@@ -486,7 +556,7 @@
 
 <script>
 
-	window.addEventListener('resize', function () {
+	/*window.addEventListener('resize', function () {
 		var pattern = Trianglify({
 			width       : window.innerWidth,
 			height      : window.innerHeight,
@@ -496,8 +566,7 @@
 		});
 		//document.body.appendChild(pattern.svg())
 		$(document.body).css("background", "no-repeat fixed url(" + pattern.png() + ")");
-    })
-
+	})*/
 
 
 </script>
