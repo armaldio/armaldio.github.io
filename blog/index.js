@@ -23,7 +23,7 @@ $(document).ready(() => {
 	struct.forEach(function (elem) {
 		$("#grid").append(
 			`
-		<div class="four wide column grow" onclick="document.location.replace('/${elem.url}')">
+		<div class="four wide column grow" onclick="document.location.replace('${elem.url}')">
         	<div class="ui center aligned segment">
         	<div class="ui fluid rounded image">
       			<div class="ui blue ribbon label">
