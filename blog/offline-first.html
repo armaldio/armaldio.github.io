@@ -1,130 +1,25 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Offline first !</title>
-    <link rel="stylesheet" href="../theme/dark.css" id="theme"/>
-    <link rel="stylesheet" href="blog.css">
+    <title></title>
+    <link rel="stylesheet" href="../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../theme/dark.css">
 </head>
-<body id="preview">
-<p>During this week, I had to develop a Progressive Web App (PWA)<br>
-    Here, I will let you know about some awesome peices of technology that everyone should use to make the web better.
-</p>
-<p>I will not go on the subjet <strong>« Native is <em>faster</em>, <em>cleaner</em>, <em>better</em>, … »</strong>, I
-    will just expose my own point of view</p>
-<p>When writing an app, sometimes you don’t know about who will use it. So you ask yourself the question <strong>« For
-    which platform should I design my app ? »</strong><br>
-    With web, you don’t have to ask this question. <strong>Every</strong> popular device have a <strong>browser</strong>
-    (even TV !)<br>
-    You write the app once, and you can use it everywhere, than is very handy (though, you have to make the code/UX
-    &quot;<strong>responsive</strong>&quot;, so that it adapts to the plateform it’s on)<br>
-    So for my app, I chose not to write a regular web app, but something called a <strong>Progressive Web
-        App</strong><br>
-    The app could be used either on a regular browser or on a mobile device</p>
-<h2><a id="Progresssive_Web_App_11"></a>Progresssive Web App</h2>
-<p>According to Google, a PWA is <strong>Reliable</strong>, <strong>Fast</strong> and <strong>Engaging</strong><br>
-    But what does that means ?</p>
-<p>You have three types of connection :</p>
-<ul>
-    <li>Connected</li>
-    <li>Offline</li>
-    <li>Uncertain</li>
-</ul>
-<p>With a normal app, fetching data from the browser, when you are connected, it’s ok. But when you are not, you just
-    have the browser telling you that you have no network or even worse, infinite loading and and white page</p>
-<p>With PWA, things are different. Here are some features :</p>
-<ul>
-    <li>Progressive - Work for every user, regardless of browser choice because they’re built with progressive
-        enhancement as a core tenet.
-    </li>
-    <li>Responsive - Fit any form factor: desktop, mobile, tablet, or forms yet to emerge.</li>
-    <li>Connectivity independent - Service workers allow work offline, or on low quality networks.</li>
-    <li>App-like - Feel like an app to the user with app-style interactions and navigation.</li>
-    <li>Fresh - Always up-to-date thanks to the service worker update process.</li>
-    <li>Safe - Served via HTTPS to prevent snooping and ensure content hasn’t been tampered with.</li>
-    <li>Discoverable - Are identifiable as “applications” thanks to W3C manifests[6] and service worker registration
-        scope allowing search engines to find them.
-    </li>
-    <li>Re-engageable - Make re-engagement easy through features like push notifications.</li>
-    <li>Installable - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app
-        store.
-    </li>
-    <li>Linkable - Easily shared via a URL and do not require complex installation.<br>
-        (Wikipedia)
-    </li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=xkme8WFyoXw"><img
-        src="https://images.frandroid.com/wp-content/uploads/2017/02/progressive-web-app-pwa.gif"
-        alt="Add to homescreen gif"></a></p>
-<p>A very interesting part is that you can cache pages (using Service Workers) and datas (using Database) wich means
-    <strong>saving datas on the user device</strong> to be able to serve them when user is offline. But <strong>not
-        only</strong> !<br>
-    This is the principle of <strong>offline first</strong></p>
-<p>First time : User connect to website -&gt; Website is served from server -&gt; Website is cached<br>
-    Second time : User connect to website -&gt; Website load instantly from cache -&gt; Website check for new version -&gt;
-    Website cache new version -&gt; Website ask the user if he wants to reload the pagee<br>
-    Third time : User connect to website -&gt; New version of the app is served from cache -&gt; Website check for new
-    version -&gt; and the loop continues…</p>
-<p>And this system works whatever the connectivity of the user cause <strong>offline version</strong> is served first.
-</p>
-<h2><a id="Service_Worker_47"></a>Service Worker</h2>
-<p>That’s really nice but how do you achieve this kind of cache system ?<br>
-    Thanks to Service workers.</p>
-<p>They are small pieces of code that <em>interceps</em> browser requests</p>
-<p><img src="https://infrequently.org/14/html5devconf_oct/images/sw_model.png" alt="alt text"
-        title="Service worker image"></p>
-<p>Not going too much into details, service workers have <strong>event</strong> like <strong>fetch</strong>, <strong>install</strong>,
-    <strong>activate</strong><br>
-    On service worker installation, you can cache all website data<br>
-    Then on fetch event (all single request goes to this function) you can do your check :</p>
-<pre><code class="language-js">on(<span class="hljs-string">'fetch'</span>, page =&gt; {
-    <span class="hljs-keyword">if</span> (isCached(page)
-        <span class="hljs-keyword">return</span> (cachedPage);
-    <span class="hljs-keyword">else</span>
-        <span class="hljs-keyword">return</span> (pageFromServer);
-}
-</code></pre>
-<p>You can even do more advanced stuff like, if the page isn’t in the cache while fetching it from the server then cache
-    it</p>
-<h2><a id="Database_69"></a>Database</h2>
-<p>Now, you know how to cache webpages and how to make an offline app<br>
-    But what about data that you fetch from external websites like firebase ?</p>
-<p>It works the same way but with database<br>
-    There are several libraries that can help you achieve what you want, but the default one is
-    <strong>indexedDB</strong></p>
-<p>You juste have to open your database and get datas inside it :</p>
-<pre><code class="language-js"><span class="hljs-keyword">var</span> request = <span class="hljs-built_in">window</span>.indexedDB.open(<span
-        class="hljs-string">"MyTestDatabase"</span>, <span class="hljs-number">3</span>);
+<body>
 
-request.onsuccess = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-  db = event.target.result;
-};
-</code></pre>
-<p>Now you can use your offline datas and then (if internet connections) fetch new datas, populate again with the new
-    one and also cache them to the database</p>
-<h2><a id="Conclusion_86"></a>Conclusion</h2>
-<p>I hope PWA have a bright future because I think it’s composed of some awesome functionalities<br>
-    In a world where everyone is on his phone, everywhere in the world, and moving fast an internet connection is not
-    always available and it’s very frustrating to not get the content you asked for.<br>
-    Also performance in web is a great debate. If it’s true that going to a browser, search for the website you want
-    then wait for it to load if slower than a native app experience, it tends to be false with progressive web apps
-    since browsers are more and more quick and powerfull and cache does a great job in speed improvement.</p>
-<h2><a id="References_and_links_91"></a>References and links</h2>
-<p>Indexed db : <a href="https://developer.mozilla.org/fr/docs/Web/API/API_IndexedDB/Using_IndexedDB">https://developer.mozilla.org/fr/docs/Web/API/API_IndexedDB/Using_IndexedDB</a><br>
-    Google I/O 2016 : <a
-            href="https://www.youtube.com/watch?v=cmGr0RszHc8">https://www.youtube.com/watch?v=cmGr0RszHc8</a><br>
-    Jake Archibald “Service Worker fanatic” :</p>
-<ul>
-    <li>Twitter : <a href="https://twitter.com/jaffathecake">https://twitter.com/jaffathecake</a></li>
-    <li>Github : <a href="https://github.com/jakearchibald">https://github.com/jakearchibald</a></li>
-</ul>
-<p>Free Udemy course about PWA : <a href="https://www.udacity.com/course/intro-to-progressive-web-apps--ud811">https://www.udacity.com/course/intro-to-progressive-web-apps–ud811</a>
-</p>
-<p>Service worker introduction : <a
-        href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">https://developers.google.com/web/fundamentals/getting-started/primers/service-workers</a>
-</p>
-<p>Awesome Service Workers : <a href="https://github.com/TalAter/awesome-service-workers">https://github.com/TalAter/awesome-service-workers</a><br>
-    Awesome PWA : <a href="https://github.com/hemanth/awesome-pwa">https://github.com/hemanth/awesome-pwa</a></p>
+<div class="ui container">
 
+    <br>
+    <div class="ui segment">
+
+        During this week, I had to develop a Progressive Web App (PWA)<br><br>Here, I will let you know about some awesome peices of technology that everyone should use to make the web better.<br><br>I will not go on the subjet <i><< Native is <b>faster</b>, <b>cleaner</b>, <b>better</b>, ... >></i>, I<br>    will just expose my own point of view<br><br>When writing an app, sometimes you don't know about who will use it. So you ask yourself the question <i><< For    which platform should I design my app ? >></i><br><br>With web, you don't have to ask this question. <i>Every</i> popular device have a <i>browser</i><br>(even TV !)<br><br>You write the app once, and you can use it everywhere, than is very handy (though, you have to make the code/UX<br>    "<i>responsive</i>", so that it adapts to the plateform it's on)<br><br>So for my app, I chose not to write a regular web app, but something called a <i>Progressive Web        App</i><br><br>The app could be used either on a regular browser or on a mobile device<br><br>## Progresssive Web App<br><br>According to Google, a PWA is <i>Reliable</i>, <i>Fast</i> and <i>Engaging</i><br><br>But what does that means ?<br><br>You have three types of connection :<br><br>* Connected<br>* Offline<br>* Uncertain<br><br>With a normal app, fetching data from the browser, when you are connected, it's ok. But when you are not, you just<br>    have the browser telling you that you have no network or even worse, infinite loading and and white page<br><br>With PWA, things are different. Here are some features :<br><br>* Progressive - Work for every user, regardless of browser choice because they're built with progressive        enhancement as a core tenet.<br>* Responsive - Fit any form factor: desktop, mobile, tablet, or forms yet to emerge.<br>* Connectivity independent - Service workers allow work offline, or on low quality networks.<br>* App-like - Feel like an app to the user with app-style interactions and navigation.<br>* Fresh - Always up-to-date thanks to the service worker update process.<br>* Safe - Served via HTTPS to prevent snooping and ensure content hasn't been tampered with.<br>* Discoverable - Are identifiable as "applications" thanks to W3C manifests[6] and service worker registration        scope allowing search engines to find them.<br>* Re-engageable - Make re-engagement easy through features like push notifications.<br>* Installable - Allow users to "keep" apps they find most useful on their home screen without the hassle of an app        store.<br>* Linkable - Easily shared via a URL and do not require complex installation.<br>        (Wikipedia)<br><br>A very interesting part is that you can cache pages (using Service Workers) and datas (using Database) wich means<br>    <i>saving datas on the user device</i> to be able to serve them when user is offline. But <i>not        only</i> !<br><br>This is the principle of <i>offline first</i><br><br>First time : User connect to website -> Website is served from server -> Website is cached<br><br>Second time : User connect to website -> Website load instantly from cache -> Website check for new version -><br>    Website cache new version -> Website ask the user if he wants to reload the pagee<br><br>Third time : User connect to website -> New version of the app is served from cache -> Website check for new<br>    version -> and the loop continues...<br><br>And this system works whatever the connectivity of the user cause <i>offline version</i> is served first.<br><br>## Service Worker<br><br>That's really nice but how do you achieve this kind of cache system ?<br><br>Thanks to Service workers.<br><br>They are small pieces of code that <b>interceps</b> browser requests<br><br>![alt text](https://infrequently.org/14/html5devconf<b>oct/images/sw</b>model.png "Service worker image")<br><br>Not going too much into details, service workers have <i>event</i> like <i>fetch</i>, <i>install</i>,<br>    <i>activate</i><br><br>On service worker installation, you can cache all website data<br><br>Then on fetch event (all single request goes to this function) you can do your check :<br><br>```js<br>on('fetch', page => {<br>    if (isCached(page)<br>        return (cachedPage);<br>    else<br>        return (pageFromServer);<br>}<br>```<br><br>You can even do more advanced stuff like, if the page isn't in the cache while fetching it from the server then cache<br>    it<br><br>## Database<br><br>Now, you know how to cache webpages and how to make an offline app<br><br>But what about data that you fetch from external websites like firebase ?<br><br>It works the same way but with database<br><br>There are several libraries that can help you achieve what you want, but the default one is<br>    <i>indexedDB</i><br><br>You juste have to open your database and get datas inside it :<br><br>```js<br>var request = window.indexedDB.open("MyTestDatabase", 3);<br><br>request.onsuccess = function(event) {<br>  db = event.target.result;<br>};<br>```<br><br>Now you can use your offline datas and then (if internet connections) fetch new datas, populate again with the new<br>    one and also cache them to the database<br><br>## Conclusion<br><br>I hope PWA have a bright future because I think it's composed of some awesome functionalities<br><br>In a world where everyone is on his phone, everywhere in the world, and moving fast an internet connection is not<br>    always available and it's very frustrating to not get the content you asked for.<br><br>Also performance in web is a great debate. If it's true that going to a browser, search for the website you want<br>    then wait for it to load if slower than a native app experience, it tends to be false with progressive web apps<br>    since browsers are more and more quick and powerfull and cache does a great job in speed improvement.<br><br>## References and links<br><br>Indexed db : [https://developer.mozilla.org/fr/docs/Web/API/API<b>IndexedDB/Using</b>IndexedDB](https://developer.mozilla.org/fr/docs/Web/API/API<b>IndexedDB/Using</b>IndexedDB)<br><br>Google I/O 2016 : [https://www.youtube.com/watch?v=cmGr0RszHc8](https://www.youtube.com/watch?v=cmGr0RszHc8)<br><br>Jake Archibald "Service Worker fanatic" :<br><br>* Twitter :[https://twitter.com/jaffathecake](https://twitter.com/jaffathecake)<br>* Github :[https://github.com/jakearchibald](https://github.com/jakearchibald)<br><br>Free Udemy course about PWA : [https://www.udacity.com/course/intro-to-progressive-web-apps–ud811](https://www.udacity.com/course/intro-to-progressive-web-apps--ud811)<br><br>Service worker introduction : [https://developers.google.com/web/fundamentals/getting-started/primers/service-workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)<br><br>Awesome Service Workers : [https://github.com/TalAter/awesome-service-workers](https://github.com/TalAter/awesome-service-workers)<br><br>Awesome PWA : [https://github.com/hemanth/awesome-pwa](https://github.com/hemanth/awesome-pwa)<br>
+
+    </div>
+
+
+</div>
+
+
+<script src="../semantic/dist/semantic.min.js"></script>
 </body>
 </html>
