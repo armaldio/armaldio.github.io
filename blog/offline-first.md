@@ -39,7 +39,7 @@ With PWA, things are different. Here are some features :
 * Linkable - Easily shared via a URL and do not require complex installation.
 (Wikipedia)
 
-<a href='https://www.youtube.com/watch?v=xkme8WFyoXw'><img class='ui fluid image' alt='Add to homescreen gif' src='http://images.frandroid.com/wp-content/uploads/2017/02/progressive-web-app-pwa.gif'></a>
+<a href='https://www.youtube.com/watch?v=xkme8WFyoXw'><img class='ui fluid image' alt='Add to homescreen gif' src='https://images.frandroid.com/wp-content/uploads/2017/02/progressive-web-app-pwa.gif'></a>
 
 A very interesting part is that you can cache pages (using Service Workers) and datas (using Database) wich means **saving datas on the user device** to be able to serve them when user is offline. But **not only** !
 
