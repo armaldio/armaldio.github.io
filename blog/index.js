@@ -3,7 +3,7 @@
  */
 
 class Page {
-	constructor (url, name, image, category) {
+	constructor (url, name, category) {
 		this.url      = url;
 		this.name     = name;
 		this.category = category;
@@ -12,10 +12,10 @@ class Page {
 
 let struct = [
 	new Page("offline-first.html", "Offline first !", "Web"),
-	new Page("offline-first.html", "Offline first 2 !", "Web"),
+	/*new Page("offline-first.html", "Offline first 2 !", "Web"),
 	new Page("offline-first.html", "Offline first 3 !", "Web"),
 	new Page("offline-first.html", "Offline first 4 !", "Web"),
-	new Page("offline-first.html", "Offline first 5 !", "Web")
+	new Page("offline-first.html", "Offline first 5 !", "Web")*/
 ];
 
 $(document).ready(() => {

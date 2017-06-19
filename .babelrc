@@ -4,6 +4,7 @@
   ],
   "ignore": [
     "semantic/**/*.js",
-    "node_modules/**/*.js"
+    "node_modules/**/*.js",
+    "blog/postsToHTML.js"
   ]
 }
