@@ -6,3 +6,5 @@ semantic/gulpfile.js
 semantic/src/
 
 semantic/tasks/
+
+blog/postsToHTML\.js

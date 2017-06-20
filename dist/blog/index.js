@@ -6,7 +6,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Created by Armaldio on 15/06/2017.
  */
 
-var Page = function Page(url, name, image, category) {
+var Page = function Page(url, name, category) {
 	_classCallCheck(this, Page);
 
 	this.url = url;
@@ -14,7 +14,7 @@ var Page = function Page(url, name, image, category) {
 	this.category = category;
 };
 
-var struct = [new Page("offline-first.html", "Offline first !", "Web"), new Page("offline-first.html", "Offline first 2 !", "Web"), new Page("offline-first.html", "Offline first 3 !", "Web"), new Page("offline-first.html", "Offline first 4 !", "Web"), new Page("offline-first.html", "Offline first 5 !", "Web")];
+var struct = [new Page("offline-first.html", "Offline first !", "Web")];
 
 $(document).ready(function () {
 
