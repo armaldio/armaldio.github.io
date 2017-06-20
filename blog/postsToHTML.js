@@ -2,10 +2,8 @@ const fs   = require("fs");
 const path = require("path");
 const marked = require('marked');
 
-const renderer = new marked.Renderer();
-
 marked.setOptions({
-	renderer: renderer,
+	renderer: new marked.Renderer(),
 	gfm: true,
 	tables: true,
 	breaks: true,
@@ -34,16 +32,6 @@ fs.readdir(".", function (err, list) {
 		/**
 		 * Parse before
 		 */
-		regex   = /\[W="(.*?)"](.*?)\[\/W\]/gmi;
-		rawFile = rawFile.replace(regex, `
-<div class="ui warning icon message">
-  <div class="content">
-  <div class="header">$1</div>
-      $2
-  </div>
-</div>`);
-
-
 
 		rawFile = marked(rawFile);
 
@@ -57,11 +45,15 @@ fs.readdir(".", function (err, list) {
 		regex   = /<img src="(.*?)" alt="(.*?)">/gmi;
 		rawFile = rawFile.replace(regex, `<img class="ui fluid rounded image" src="$1" alt="$2">`);
 
-		regex   = /<h[1-5] id="(.*?)">(.*?)<\/h[1-5]>/gmi;
-		rawFile = rawFile.replace(regex, `<h2 class="ui header" id="$1">$2</h2>`);
+		regex   = /<h([1-5]) id="(.*?)">(.*?)<\/h([1-5])>/gmi;
+		rawFile = rawFile.replace(regex, `<h$1 class="ui header" id="$2">$3</h$4>`);
 
 		// Read template -----------------------------------------------------------
 		let template = fs.readFileSync("template.html", "utf8");
+
+		template     = template.replace("{title}", "title");
+		template     = template.replace("{header}", "header");
+		template     = template.replace("{description}", rawFile);
 		template     = template.replace("{document}", rawFile);
 
 		// Write template -----------------------------------------------------------

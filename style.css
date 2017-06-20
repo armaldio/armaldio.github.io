@@ -28,6 +28,10 @@ img.discord {
     font-size: 18px;
 }
 
+.ui.header {
+    color: #fff;
+}
+
 .italic {
     font-style: italic;
 }
@@ -40,4 +44,16 @@ img.discord {
 .ui.modal>.header:not(.ui) {
     background: #333;
     color: #fff;
+}
+
+em {
+    text-decoration: underline;
+}
+
+.fab.left {
+    position: fixed;
+    bottom: 5px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 999;
 }
