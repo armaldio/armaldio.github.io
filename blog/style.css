@@ -4,5 +4,12 @@
 }
 
 .grow:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+#subscribe-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    cursor: pointer;
 }

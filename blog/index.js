@@ -13,9 +13,9 @@ class Page {
 let struct = [
 	new Page("offline-first.html", "Offline first !", "Web"),
 	/*new Page("offline-first.html", "Offline first 2 !", "Web"),
-	new Page("offline-first.html", "Offline first 3 !", "Web"),
-	new Page("offline-first.html", "Offline first 4 !", "Web"),
-	new Page("offline-first.html", "Offline first 5 !", "Web")*/
+	 new Page("offline-first.html", "Offline first 3 !", "Web"),
+	 new Page("offline-first.html", "Offline first 4 !", "Web"),
+	 new Page("offline-first.html", "Offline first 5 !", "Web")*/
 ];
 
 $(document).ready(() => {
@@ -36,6 +36,12 @@ $(document).ready(() => {
 		`
 		);
 		console.log(elem);
+	});
+
+	const messaging = firebase.messaging();
+
+	$("#subscribe-button").on("click", () => {
+		$('#subscribe-modal').modal('show');
 	});
 
 });

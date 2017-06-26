@@ -22,5 +22,11 @@ $(document).ready(function () {
 		$("#grid").append("\n\t\t<div class=\"four wide column grow\" onclick=\"document.location.replace('" + elem.url + "')\">\n        \t<div class=\"ui center aligned segment\">\n        \t<div class=\"ui fluid rounded image\">\n      \t\t\t<div class=\"ui blue ribbon label\">\n        \t\t\t<i class=\"newspaper icon\"></i> " + elem.name + "\n     \t\t\t </div>\n     \t\t\t <img src=\"" + elem.url.replace('.html', '') + ".png\">\n   \t\t\t </div>\t\t\t\t\n        \t</div>\n        </div>\n\t\t");
 		console.log(elem);
 	});
+
+	var messaging = firebase.messaging();
+
+	$("#subscribe-button").on("click", function () {
+		$('#subscribe-modal').modal('show');
+	});
 });
 //# sourceMappingURL=index.js.map

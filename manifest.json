@@ -1,0 +1,15 @@
+{
+  "short_name": "Armaldio ",
+  "name": "Armaldio's website",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "80x80"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#212121",
+  "gcm_sender_id": "103953800507"
+}

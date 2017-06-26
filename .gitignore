@@ -9,3 +9,5 @@ semantic/tasks/
 
 blog/postsToHTML\.js
 !/blog/postsToHTML.js
+
+*.psd
