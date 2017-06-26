@@ -5,6 +5,8 @@
   "ignore": [
     "semantic/**/*.js",
     "node_modules/**/*.js",
-    "blog/postsToHTML.js"
+    "blog/postsToHTML.js",
+    "sw.js",
+    "blog/highkight/**/*.js"
   ]
 }

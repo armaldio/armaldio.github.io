@@ -26,7 +26,7 @@ $(document).ready(() => {
 		<div class="four wide column grow" onclick="document.location.replace('${elem.url}')">
         	<div class="ui center aligned segment">
         	<div class="ui fluid rounded image">
-      			<div class="ui blue ribbon label">
+      			<div class="ui green ribbon label">
         			<i class="newspaper icon"></i> ${elem.name}
      			 </div>
      			 <img src="${elem.url.replace('.html', '')}.png">
