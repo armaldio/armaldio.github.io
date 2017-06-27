@@ -14,7 +14,7 @@ var Page = function Page(url, name, category) {
 	this.category = category;
 };
 
-var struct = [new Page("offline-first.html", "Offline first !", "Web"), new Page("offline-first.html", "Accelerated mobile pages", "Web"), new Page("offline-first.html", "The tools I use", "Web")];
+var struct = [new Page("offline-first.html", "Offline first !", "Web")];
 
 $(document).ready(function () {
 

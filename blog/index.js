@@ -12,8 +12,8 @@ class Page {
 
 let struct = [
 	new Page("offline-first.html", "Offline first !", "Web"),
-	new Page("offline-first.html", "Accelerated mobile pages", "Web"),
-	new Page("offline-first.html", "The tools I use", "Web"),
+	/*new Page("offline-first.html", "Accelerated mobile pages", "Web"),
+	new Page("offline-first.html", "The tools I use", "Web"),*/
 /*	new Page("offline-first.html", "Offline first 4 !", "Web"),
 	new Page("offline-first.html", "Offline first 5 !", "Web")*/
 ];
