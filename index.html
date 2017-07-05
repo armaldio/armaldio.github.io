@@ -21,8 +21,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="theme/dark.css" id="theme"/>
 
     <!--<style amp-boilerplate>body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -96,10 +94,12 @@
 
             <img src="img/logo.png" alt="Logo" class="ui centered tiny rounded image">
             <br>
-            <p>I'm <b>Quentin GOINAUD</b>, a French guy that loves to code stuff and things</p>
-            <p>I'm currently studying at <b>Epitech Lyon</b>, a French IT school (second year)</p>
+            <h1 class="ui header">Quentin GOINAUD</h1>
+            <p>French guy that loves to code and experiment new techs ⚡</p>
+            <p>I'm currently studying at <b><a href="http://www.epitech.eu/">Epitech Lyon</a></b>, a French IT school
+                (3rd year)</p>
             <br>
-            <p><i><b>I am looking for a part-time in Lyon, France from October 2017 to April 2018 (modular duration)</b></i>
+            <p><u><b>I am looking for a part-time in Lyon, France from October 2017 to April 2018 (modular duration)</b></u>
             </p>
             <a target="_blank" onmouseover="this.href=this.href.replace(/x/g,'');" href="mailto:xarmaldiox@gmail.com"
                class="ui green button big">
@@ -115,19 +115,19 @@
             <div class="big ui buttons">
                 <a href="https://www.paypal.me/armaldio" target="_blank" class="ui button blue">Paypal</a>
                 <div class="or"></div>
-                <a href="https://coingate.com/pay/armaldio" target="_blank" class="ui button green">Cryptocurrency</a>
+                <a href="https://coingate.com/pay/armaldio" target="_blank" class="ui button green">CryptoCoins</a>
             </div>
             <br>
             <br>
             <button id="theme-toggle" class="ui toggle button big ">
                 Lights off
             </button>
-            <a id="blog" class="ui toggle button big" href="http://armaldio.xyz/blog">
+            <a id="blog" class="ui toggle button big" href="/blog">
                 Blog
             </a>
         </div>
 
-        <div class="ui two column stackable grid">
+        <div class="ui segment two column stackable grid">
             <div class="column">
                 <div class="ui segment" data-aos="fade-right">
                     <h1 class="ui header">Web</h1>
@@ -182,6 +182,9 @@
         </div>
 
         <div class="ui segment center aligned" data-aos="fade-up">
+            <h2 class="ui header">Social medias</h2>
+
+
             <a target="_blank" href="https://twitter.com/armaldio" class="ui twitter button big">
                 <i class="twitter icon"></i>
                 Twitter
@@ -209,28 +212,74 @@
         </div>
 
         <div class="ui segment center aligned" data-aos="fade-up">
-            <button class="ui big yellow button">Firebase</button>
-            <button class="ui big red button">Office</button>
-            <button class="ui big brown button">Construct 2</button>
-            <button class="ui big blue button">PHP</button>
-            <button class="ui big green button">Python</button>
-            <button class="ui big blue button">Photoshop</button>
-            <button class="ui big red button">JSON</button>
-            <button class="ui big orange button">OCaml</button>
-            <button class="ui big blue button">Cinema 4D</button>
-            <button class="ui big purple button">Arduino</button>
-            <button class="ui big orange button">Git</button>
-            <button class="ui big yellow button">Linux</button>
-            <button class="ui big RED button">Bash</button>
-            <button class="ui big blue button">SQL</button>
-            <button class="ui big green button">Progressive Web Apps</button>
-            <button class="ui big red button">Service workers</button>
-            <button class="ui big pink button">Semantic-ui</button>
+            <h2 class="ui header">Skills</h2>
+
+            <div class="ui segment three column stackable grid">
+                <div class="column">
+
+                    <div class="ui segment">
+                        <h3 class="ui header">Libraries</h3>
+                        <button class="ui big button skills inverted">Firebase</button>
+                        <button class="ui big button skills inverted">Semantic-UI</button>
+                    </div>
+
+                    <div class="ui segment">
+                        <h3 class="ui header">Softwares</h3>
+                        <button class="ui big button skills inverted">Office</button>
+                        <button class="ui big button skills inverted">Construct 2</button>
+                        <button class="ui big button skills inverted">Photoshop</button>
+                        <button class="ui big button skills inverted">Cinema 4D</button>
+                    </div>
+                    
+                    <div class="ui segment">
+                        <h3 class="ui header">Tools</h3>
+                        <button class="ui big button skills inverted">Git</button>
+                        <button class="ui big button skills inverted">Bash</button>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="ui segment">
+                        <h3 class="ui header">Other languages</h3>
+                        <button class="ui big button skills inverted">PHP</button>
+                        <button class="ui big button skills inverted">Python</button>
+                        <button class="ui big button skills inverted">JSON</button>
+                        <button class="ui big button skills inverted">OCaml</button>
+                        <button class="ui big button skills inverted">Arduino</button>
+                        <button class="ui big button skills inverted">SQL</button>
+                    </div>
+
+                    <div class="ui segment">
+                        <h3 class="ui header">Editors</h3>
+                        <button class="ui big button skills inverted">Jetbrain's Editors</button>
+                        <button class="ui big button skills inverted">VSCode</button>
+                        <button class="ui big button skills inverted">Emacs</button>
+                        <button class="ui big button skills inverted">Atom</button>
+                    </div>
+                </div>
+
+                <div class="column">
+
+                    <div class="ui segment">
+                        <h3 class="ui header">OSs</h3>
+
+                        <button class="ui big button skills inverted">Linux</button>
+                        <button class="ui big button skills inverted">Windows</button>
+                    </div>
+
+                    <div class="ui segment">
+                        <h3 class="ui header">Technologies</h3>
+                        <button class="ui big button skills inverted">Progressive Web Apps</button>
+                        <button class="ui big button skills inverted">Service workers</button>
+                        <button class="ui big button skills inverted">Responsive</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="ui segment center aligned">
 
-            <h1 class="ui header">Projects</h1>
+            <h2 class="ui header">Projects</h2>
 
             <div class="ui equal height three column stackable grid">
                 <div class="column">
@@ -384,7 +433,7 @@
 
     <div class="ui segment center aligned">
 
-        <h1 class="ui header">Guest book</h1>
+        <h2 class="ui header">Guest book</h2>
 
         <div class="ui equal height one column stackable grid">
             <div class="column">
@@ -480,6 +529,11 @@
 </div>
 
 <br>
+
+
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="theme/dark.css" id="theme"/>
+
 <script type="text/javascript">
 	var d = new Date();
 	document.write("<p id='footer'>" + d.getFullYear() + " Copyright &copy Armaldio</p>")
