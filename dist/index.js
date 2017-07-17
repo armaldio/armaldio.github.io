@@ -48,7 +48,7 @@ $(document).ready(function () {
   */
 	i18next.use(i18nextXHRBackend).use(i18nextBrowserLanguageDetector).init({
 		fallbackLng: 'en',
-		debug: true,
+		debug: false,
 		backend: {
 			loadPath: 'assets/i18n/{{lng}}/{{ns}}.json',
 			crossDomain: true
@@ -76,8 +76,6 @@ $(document).ready(function () {
 	$("#language").on("change", function () {
 
 		var lang = $('#lang-dd').dropdown('get value');
-
-		console.log(lang);
 
 		if (parseInt(lang) === 0) {
 			i18next.changeLanguage('en');
