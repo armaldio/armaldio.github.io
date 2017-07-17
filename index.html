@@ -19,7 +19,8 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:url" content="https://armaldio.xyz">
     <meta name="twitter:title" content="Armaldio | Portfolio">
-    <meta name="twitter:description" content="Armaldio - Code writer - I'm building open source and profesional softwares.">
+    <meta name="twitter:description"
+          content="Armaldio - Code writer - I'm building open source and profesional softwares.">
     <meta name="twitter:image" content="https://armaldio.xyz/img/logo-200.png">
     <meta name="twitter:site" content="@armaldio">
     <meta name="twitter:creator" content="@armaldio">
@@ -30,7 +31,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://armaldio.xyz">
     <meta property="og:image" content="https://armaldio.xyz/img/logo-200.png">
-    <meta property="og:description" content="Armaldio - Code writer - I'm building open source and profesional softwares.">
+    <meta property="og:description"
+          content="Armaldio - Code writer - I'm building open source and profesional softwares.">
     <!-- FACEBOOK END -->
 
 
@@ -107,17 +109,29 @@
 
 <div class="ui container " id="container">
 
+    <div class="ui selection dropdown topright" id="lang-dd">
+        <input type="hidden" name="lang" id="language">
+        <i class="dropdown icon"></i>
+        <div class="default text"><i class="us flag"></i>English</div>
+        <div class="menu">
+            <div class="item" data-value="0"><i class="us flag"></i>English</div>
+            <div class="item" data-value="1"><i class="fr flag"></i>Français</div>
+        </div>
+    </div>
+
     <div class="ui">
         <div class="ui segment center aligned" data-aos="fade-down">
 
             <img src="img/logo.png" alt="Logo" class="ui centered tiny rounded image">
             <br>
             <h1 class="ui header">Quentin GOINAUD</h1>
-            <p>French guy that loves to code and experiment new techs ⚡</p>
-            <p>I'm currently studying at <b><a href="http://www.epitech.eu/">Epitech Lyon</a></b>, a French IT school
+            <p data-i18n="headline">French guy that loves to code and experiment new techs ⚡</p>
+            <p data-i18n="description">I'm currently studying at <b><a href="http://www.epitech.eu/">Epitech
+                Lyon</a></b>, a French IT school
                 (3rd year)</p>
             <br>
-            <p><u><b>I am looking for a part-time in Lyon, France from October 2017 to April 2018 (modular duration)</b></u>
+            <p><u><b data-i18n="part-time">I am looking for a part-time in Lyon, France from October 2017 to April 2018
+                (modular duration)</b></u>
             </p>
             <a target="_blank" onmouseover="this.href=this.href.replace(/x/g,'');" href="mailto:xarmaldiox@gmail.com"
                class="ui green button big">
@@ -126,7 +140,7 @@
             </a>
             <br>
             <br>
-            <p class="ui centered">If you like my work, support me with a small donation <i
+            <p class="ui centered" data-i18n="support">If you like my work, support me with a small donation <i
                     class="heart icon pink"></i>
             </p>
 
@@ -200,7 +214,7 @@
         </div>
 
         <div class="ui segment center aligned" data-aos="fade-up">
-            <h2 class="ui header">Social medias</h2>
+            <h2 class="ui header" data-i18n="social-medias">Social medias</h2>
 
 
             <a target="_blank" href="https://twitter.com/armaldio" class="ui twitter button big">
@@ -230,19 +244,19 @@
         </div>
 
         <div class="ui segment center aligned" data-aos="fade-up">
-            <h2 class="ui header">Skills</h2>
+            <h2 class="ui header" data-i18n="skills">Skills</h2>
 
             <div class="ui segment three column stackable grid">
                 <div class="column">
 
                     <div class="ui segment">
-                        <h3 class="ui header">Libraries</h3>
+                        <h3 class="ui header" data-i18n="libraries">Libraries</h3>
                         <button class="ui big button skills inverted">Firebase</button>
                         <button class="ui big button skills inverted">Semantic-UI</button>
                     </div>
 
                     <div class="ui segment">
-                        <h3 class="ui header">Softwares</h3>
+                        <h3 class="ui header" data-i18n="softwares">Softwares</h3>
                         <button class="ui big button skills inverted">Office</button>
                         <button class="ui big button skills inverted">Construct 2</button>
                         <button class="ui big button skills inverted">Photoshop</button>
@@ -250,7 +264,7 @@
                     </div>
 
                     <div class="ui segment">
-                        <h3 class="ui header">Tools</h3>
+                        <h3 class="ui header" data-i18n="tools">Tools</h3>
                         <button class="ui big button skills inverted">Git</button>
                         <button class="ui big button skills inverted">Bash</button>
                     </div>
@@ -258,7 +272,7 @@
 
                 <div class="column">
                     <div class="ui segment">
-                        <h3 class="ui header">Other languages</h3>
+                        <h3 class="ui header" data-i18n="other-languages">Other languages</h3>
                         <button class="ui big button skills inverted">PHP</button>
                         <button class="ui big button skills inverted">Python</button>
                         <button class="ui big button skills inverted">JSON</button>
@@ -268,7 +282,7 @@
                     </div>
 
                     <div class="ui segment">
-                        <h3 class="ui header">Editors</h3>
+                        <h3 class="ui header" data-i18n="editors">Editors</h3>
                         <button class="ui big button skills inverted">Jetbrain's Editors</button>
                         <button class="ui big button skills inverted">VSCode</button>
                         <button class="ui big button skills inverted">Emacs</button>
@@ -297,38 +311,38 @@
 
         <div class="ui segment center aligned">
 
-            <h2 class="ui header">Projects</h2>
+            <h2 class="ui header" data-i18n="projects">Projects</h2>
 
             <div class="ui equal height three column stackable grid">
                 <div class="column">
                     <div class="ui segment teal" data-aos="fade-left">
                         <img alt="Electron" class="ui tiny centered image" src="img/electron-logo.png">
-                        <h3 class="ui header">Electron for Construct 2</h3>
+                        <h3 class="ui header" data-i18n="electron-for-c2">Electron for Construct 2</h3>
 
-                        <p>Electron for Construct 2 is a set of tools that allow you to make your construct 2 games able
+                        <p data-i18n="e4c2-description">Electron for Construct 2 is a set of tools that allow you to
+                            make your construct 2 games able
                             to
                             run with Electron</p>
                         <br>
 
-                        <a class="ui green button" target="_blank" href="https://c2electron.github.io/guide/">
-                            <i class="icon heart"></i>
-                            View project
+                        <a class="ui green button" target="_blank" href="https://github.com/C2Electron/template">
+                            <p data-i18n="view-project"><i class="icon heart"></i>View project</p>
                         </a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui segment brown" data-aos="fade-up">
                         <img alt="Plugin Manager" class="ui tiny centered image" src="img/pm.ico">
-                        <h3 class="ui header">Addon Manager for Construct 2</h3>
+                        <h3 class="ui header" data-i18n="addon-manager">Addon Manager for Construct 2</h3>
 
-                        <p>An addon manager that allow you to easily manage your Construct 2 addons</p>
+                        <p data-i18n="am-description">An addon manager that allow you to easily manage your Construct 2
+                            addons</p>
                         <br>
                         <br>
 
                         <a class="ui green button" target="_blank"
                            href="https://armaldio.itch.io/construct-addon-manager">
-                            <i class="icon heart"></i>
-                            View project
+                            <p data-i18n="view-project"><i class="icon heart"></i>View project</p>
                         </a>
                     </div>
                 </div>
@@ -338,17 +352,14 @@
                         <img alt="Discord" class="ui tiny centered image" src="img/discordandc2.png">
                         <h3 class="ui header">Discord</h3>
 
-                        <p>Join my Discord channel about Construct 2</p>
+                        <p data-i18n="discord">Join my Discord server about Construct 2</p>
                         <br><br>
 
                         <a class="ui green button" target="_blank" href="https://discord.gg/0eLPLj96B4tUr1D3">
-                            <i class="icon heart"></i>
-                            Join
+                            <p data-i18n="discord-description"><i class="icon heart"></i>Join</p>
                         </a>
                         <br>
                         <br>
-                        <!-- <img alt="Discord Badge" class="ui discord"
-                             src="https://discordbadges-armaldio.rhcloud.com/badge/discord/online?id=116497549237551109&title=Construct%20Community"> -->
                     </div>
                 </div>
             </div>
@@ -357,29 +368,29 @@
                 <div class="column">
                     <div class="ui segment red" data-aos="fade-left">
                         <img alt="NPM" class="ui tiny centered image" src="img/npm.png">
-                        <h3 class="ui header">Node modules</h3>
+                        <h3 class="ui header" data-i18n="node-modules">Node.js modules</h3>
 
-                        <p>I've wrote some Node extension modules to give you the ability to interact with Construct 2
+                        <p data-i18n="node-modules-description">I've wrote some Node extension modules to give you the
+                            ability to interact with Construct 2
                             from your Node-based project</p>
 
                         <a class="ui green button" target="_blank" href="https://www.npmjs.com/~armaldio">
-                            <i class="icon heart"></i>
-                            View modules
+                            <p data-i18n="view-modules"><i class="icon heart"></i>View modules</p>
                         </a>
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui segment grey" data-aos="fade-up">
                         <img alt="Construct 2" class="ui tiny centered image" src="img/construct2.png">
-                        <h3 class="ui header">Construct 2 Plugins</h3>
+                        <h3 class="ui header" data-i18n="c2-plugins">Construct 2 Plugins</h3>
 
-                        <p>You can find a lot of C2 plugins I made on my Github profile</p>
+                        <p data-i18n="c2-plugins-description">You can find a lot of C2 plugins I made on my Github
+                            profile</p>
                         <br>
                         <br>
 
                         <a class="ui green button" target="_blank" href="https://github.com/armaldio">
-                            <i class="icon heart"></i>
-                            View plugins
+                            <p data-i18n="view-plugins"><i class="icon heart"></i> View plugins</p>
                         </a>
                     </div>
                 </div>
@@ -388,12 +399,12 @@
                         <img alt="Xtruct" class="ui tiny centered image" src="img/xtruct.ico">
                         <h3 class="ui header">Xtruct</h3>
 
-                        <p>An open-source 2d hackable game engine based on Phaser with a full editor</p>
+                        <p data-i18n="xtruct-description">An open-source 2d hackable game engine based on Phaser with a
+                            full editor</p>
                         <br>
 
                         <a class="ui green button" target="_blank" href="https://github.com/Xtruct">
-                            <i class="icon heart"></i>
-                            View project
+                            <p data-i18n="view-project"><i class="icon heart"></i>View project</p>
                         </a>
                     </div>
                 </div>
@@ -405,12 +416,11 @@
                              src="img/livesms.png">
                         <h3 class="ui header">LiveSMS</h3>
 
-                        <p>Open-source, self-hostable Pushbullet clone</p>
+                        <p data-i18n="livesms-description">Open-source, self-hostable Pushbullet clone</p>
                         <br>
 
                         <a class="ui green button" target="_blank" href="https://github.com/livesms">
-                            <i class="icon heart"></i>
-                            View project
+                            <p data-i18n="view-project"><i class="icon heart"></i>View project</p>
                         </a>
                     </div>
                 </div>
@@ -418,14 +428,13 @@
                 <div class="column">
                     <div class="ui segment blue" data-aos="fade-up">
                         <img alt="Translation Manager" class="ui tiny centered image" src="img/translation_manager.ico">
-                        <h3 class="ui header">JSON translation manager</h3>
+                        <h3 class="ui header" data-i18n="transmanager">JSON translation manager</h3>
 
-                        <p>Tool to help you manage your JSON translations</p>
+                        <p data-i18n="transmanager-description">Tool to help you manage your JSON translations</p>
                         <br>
 
                         <a class="ui green button disabled" target="_blank" href="">
-                            <i class="icon heart"></i>
-                            Coming soon
+                            <p data-i18n="comming-soon"><i class="icon heart"></i> Coming soon</p>
                         </a>
                     </div>
                 </div>
@@ -433,15 +442,14 @@
                 <div class="column">
                     <div class="ui segment teal" data-aos="fade-right">
                         <img alt="Games" class="ui tiny centered image" src="img/game.png">
-                        <h3 class="ui header">My games</h3>
+                        <h3 class="ui header" data-i18n="my-games">My games</h3>
 
-                        <p>Currently no games, but a lot of ideas ;)</p>
+                        <p data-i18n="my-games-description">Currently no games, but a lot of ideas ;)</p>
                         <br>
                         <br>
 
                         <a class="ui green button disabled" target="_blank" href="">
-                            <i class="icon heart"></i>
-                            0 games
+                            <p data-i18n="game-nbr"><i class="icon heart"></i> 0 games</p>
                         </a>
                     </div>
                 </div>
@@ -451,7 +459,7 @@
 
     <div class="ui segment center aligned">
 
-        <h2 class="ui header">Guest book</h2>
+        <h2 class="ui header" data-i18n="guest-book">Guest book</h2>
 
         <div class="ui equal height one column stackable grid">
             <div class="column">
@@ -459,7 +467,7 @@
                     <span class="italic">&laquo; My experience in working with Quentin has been a very positive as he seems to be a very professional and kind individual who takes a lot of pride in his work and has a lot of passion for the industry he is involved in. &raquo;</span>
                     <br>
                     <br>
-                    <button class="ui button green open-modal" data-modal="weuk">View</button>
+                    <button class="ui button green open-modal" data-modal="weuk" data-i18n="view">View</button>
                 </div>
             </div>
         </div>
@@ -499,7 +507,7 @@
         <br>
         <a target="_blank" onmouseover="this.href=this.href.replace(/x/g,'');"
            href="mailto:xarmaldiox@gmail.com?Subject=%5BFeedback%5D"
-           class="ui big button green center aligned">Add your
+           class="ui big button green center aligned" data-i18n="add-your-own">Add your
             own</a>
     </div>
 </div>
@@ -574,14 +582,17 @@
 <script src="semantic/dist/semantic.min.js"></script>
 <!-- <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>  -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.4.3/i18next.js"></script>
+<script src="js/i18next/i18nextBrowserLanguageDetector.min.js"></script>
+<script src="js/i18next/i18nextXHRBackend.min.js"></script>
 <script src="index.js"></script>
 
 <script>
 	(function (i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;
 		i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
 		a = s.createElement(o),
 			m = s.getElementsByTagName(o)[0];
 		a.async = 1;
