@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/armaldio/armaldio.github.io#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "gulp": "^3.9.1",
     "gulp-sort": "^2.0.0",
     "i18next-scanner": "^1.9.0"

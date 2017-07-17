@@ -1,12 +1,13 @@
 {
   "presets": [
-    "es2015"
+    "env"
   ],
   "ignore": [
     "semantic/**/*.js",
     "node_modules/**/*.js",
     "blog/postsToHTML.js",
     "sw.js",
+    "gulpfile.js",
     "blog/highkight/**/*.js"
   ]
 }
