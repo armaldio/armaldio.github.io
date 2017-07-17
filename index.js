@@ -53,7 +53,7 @@ $(document).ready(() => {
 		.use(i18nextBrowserLanguageDetector)
 		.init({
 			fallbackLng: 'en',
-			debug      : false,
+			debug      : true,
 			backend    : {
 				loadPath   : 'assets/i18n/{{lng}}/{{ns}}.json',
 				crossDomain: true
