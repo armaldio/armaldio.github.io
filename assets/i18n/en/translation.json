@@ -28,11 +28,12 @@
   "livesms-description": "Open-source, self-hostable Pushbullet clone",
   "transmanager": "JSON translation manager",
   "transmanager-description": "Tool to help you manage your JSON translations",
-  "comming-soon": "Coming soon",
   "my-games": "My games",
   "my-games-description": "Currently no games, but a lot of ideas ;)",
   "game-nbr": "0 games",
   "guest-book": "Guest book",
   "view": "View",
-  "add-your-own": "Add your own"
+  "add-your-own": "Add your own",
+  "transmanager-button": "Register for the beta",
+  "deprecated": "Deprecated"
 }

@@ -28,11 +28,12 @@
   "livesms-description": "Open-source, hébergeable clone de Pushbullet",
   "transmanager": "Gestionnaire de traductions JSON",
   "transmanager-description": "Application qui vous aide a gérer vos traduction grâce au format JSON",
-  "comming-soon": "Bientôt disponible",
   "my-games": "Mes jeux",
   "my-games-description": "Pas de jeux actuellement, mais déjà de nombreuses idées ;)",
   "game-nbr": "0 jeux",
   "guest-book": "Livre d'or",
   "view": "Voir",
-  "add-your-own": "Ajoutez la votre"
+  "add-your-own": "Ajoutez la votre",
+  "transmanager-button": "Rejoignez la beta",
+  "deprecated": "Obsolète"
 }
