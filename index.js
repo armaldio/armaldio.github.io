@@ -81,7 +81,7 @@ $(document).ready(() => {
 	$("#language").on("change", () => {
 
 		let lang = $('#lang-dd').dropdown('get value');
-		
+
 		if (parseInt(lang) === 0) {
 			i18next.changeLanguage('en');
 		} else {

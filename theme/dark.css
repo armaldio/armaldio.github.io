@@ -14,3 +14,40 @@ body {
 h1, h2, h3, .label, #footer, p, li {
     color: #fff !important;
 }
+
+/**
+ Cards
+ */
+.card.inverted {
+    box-shadow: none !important;
+    border-left: 1px solid #222 !important;
+    border-right: 1px solid #222 !important;
+    background: #222 !important;
+    color: #fff !important;
+}
+
+.card.inverted .content {
+    background: #222 !important;
+    color: #fff !important;
+   /* border: 1px solid #1d1d1d;
+    box-shadow: none !important;*/
+}
+
+.card.inverted .bottom {
+    background: #1d1d1d !important;
+    border: 1px solid #222 !important;
+}
+
+.card.inverted .bottom i {
+    color: #fff !important;
+}
+
+.card.inverted a:hover
+{
+    color: #fff !important;
+}
+
+.card.inverted a:hover
+{
+    color: #b5b5b5 !important;
+}
