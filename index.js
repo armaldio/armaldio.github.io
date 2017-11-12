@@ -38,16 +38,16 @@ $(document).ready(() => {
 
 	//AOS.init();
 
-	let currentLang = localStorage.getItem("i18nextLng");
+	/*let currentLang = localStorage.getItem("i18nextLng");
 	if (currentLang === "fr")
 		$('#lang-dd').dropdown('set selected', 1);
 	else if (currentLang === "en")
 		$('#lang-dd').dropdown('set selected', 0);
 	$('#lang-dd').dropdown('refresh');
 
-	/**
+	/!**
 	 * i18next
-	 */
+	 *!/
 	i18next
 		.use(i18nextXHRBackend)
 		.use(i18nextBrowserLanguageDetector)
@@ -90,9 +90,9 @@ $(document).ready(() => {
 
 	});
 
-	/**
+	/!**
 	 * //i18next
-	 */
+	 *!/
 
 	if ("serviceWorker" in navigator) {
 		navigator.serviceWorker.register('./sw.js').then((registration) => {
@@ -100,6 +100,6 @@ $(document).ready(() => {
 		}, () => {
 			console.log("Service worker failed to register");
 		})
-	}
+	}*/
 
 });
