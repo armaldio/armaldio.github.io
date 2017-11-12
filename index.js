@@ -11,7 +11,7 @@ $(document).ready(() => {
 
 	$('#lang-dd').dropdown();
 
-	var theme = "night";
+	let theme = "night";
 
 	$('#theme-toggle').on("click", function () {
 		if (theme === "light") {
@@ -28,8 +28,8 @@ $(document).ready(() => {
 	});
 
 	$(".open-modal").on("click", function (el) {
-		var target = el.target;
-		var modal  = $(target).data("modal");
+		let target = el.target;
+		let modal  = $(target).data("modal");
 
 		console.log(modal);
 
