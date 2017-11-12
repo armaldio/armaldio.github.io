@@ -39,13 +39,13 @@ $(document).ready(function () {
 
 	//AOS.init();
 
-	var currentLang = localStorage.getItem("i18nextLng");
+	/*var currentLang = localStorage.getItem("i18nextLng");
 	if (currentLang === "fr") $('#lang-dd').dropdown('set selected', 1);else if (currentLang === "en") $('#lang-dd').dropdown('set selected', 0);
 	$('#lang-dd').dropdown('refresh');
 
-	/**
+	/!**
   * i18next
-  */
+  *!/
 	i18next.use(i18nextXHRBackend).use(i18nextBrowserLanguageDetector).init({
 		fallbackLng: 'en',
 		debug: false,
@@ -82,7 +82,7 @@ $(document).ready(function () {
 		} else {
 			i18next.changeLanguage('fr');
 		}
-	});
+	});*/
 
 	/**
   * //i18next
