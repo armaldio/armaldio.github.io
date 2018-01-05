@@ -32,7 +32,7 @@ $(document).ready(function () {
             percent: (donationsPaypalMonth + campainPerMonth) / goalPerMonth * 100
         });
 
-        $('#progressbarDataYearly').html('Donations: $' + donationsPaypalYear + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Patreon: ' + totalOldPatronDonations + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $' + (donationsPaypalYear + totalOldPatronDonations) + '/$' + goalPerYear + ' per year');
+        $('#progressbarDataYearly').html('Donations: $' + donationsPaypalYear + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Patreon: $' + totalOldPatronDonations + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $' + (donationsPaypalYear + totalOldPatronDonations) + '/$' + goalPerYear + ' per year');
 
         $('#progressbarYearly').progress({
             percent: (donationsPaypalYear + totalOldPatronDonations) / goalPerYear * 100

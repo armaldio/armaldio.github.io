@@ -74,3 +74,8 @@ em {
     right: 1em;
     z-index: 9;
 }
+
+#progressbarDataMonthly, #progressbarDataYearly {
+    padding-top: 11px;
+    font-size: 18px;
+}
