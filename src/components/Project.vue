@@ -1,32 +1,38 @@
 <template>
   <v-flex sm12 md6 lg4 xl3>
     <v-card color="grey darken-4" class="white--text card-container">
-      <div class="icons pt-2 pb-3">
-        <v-layout>
-          <v-badge class="mx-4 mt-4" color="grey darken-2" v-if="stars > -1">
-            <span slot="badge">{{ stars }}</span>
-            <v-icon small>fas fa-star</v-icon>
-          </v-badge>
-          <v-badge class="mx-4 mt-4" color="grey darken-2" v-if="watchers > -1">
-            <span slot="badge">{{ watchers }}</span>
-            <v-icon small right>fas fa-eye</v-icon>
-          </v-badge>
-          <v-badge class="mx-4 mt-4" color="grey darken-2" v-if="forks > -1">
-            <span slot="badge">{{ forks }}</span>
-            <v-icon small right>fas fa-code-branch</v-icon>
-          </v-badge>
-        </v-layout>
-      </div>
-
       <div v-if="project.pro" class="ribbon ribbon-top-right"><span>pro</span></div>
       <div v-if="project.wip" class="ribbon ribbon-top-right"><span>wip</span></div>
 
       <img class="centered-image" width="120" height="auto" :src="project.image" alt="">
       <v-card-title class="centered project-title">
-        <div class="headline">{{ project.title }}</div>
-        <br>
-        <vue-markdown>{{ project.description }}</vue-markdown>
+        <div class="headline pb-2">{{ project.title }}</div>
       </v-card-title>
+      <v-card-text>
+        <vue-markdown class="text-xs-center" :watches="['source']" :source="project.description"></vue-markdown>
+        <div class="icons py-3">
+          <v-layout>
+            <v-flex xs2 offset-xs3>
+              <v-badge color="grey darken-2" v-if="stars > -1">
+                <span slot="badge">{{ stars }}</span>
+                <v-icon small>fas fa-star</v-icon>
+              </v-badge>
+            </v-flex>
+            <v-flex xs2>
+              <v-badge color="grey darken-2" v-if="watchers > -1">
+                <span slot="badge">{{ watchers }}</span>
+                <v-icon small right>fas fa-eye</v-icon>
+              </v-badge>
+            </v-flex>
+            <v-flex xs2>
+              <v-badge color="grey darken-2" v-if="forks > -1">
+                <span slot="badge">{{ forks }}</span>
+                <v-icon small right>fas fa-code-branch</v-icon>
+              </v-badge>
+            </v-flex>
+          </v-layout>
+        </div>
+      </v-card-text>
       <v-card-actions>
         <v-btn v-if="project.deprecated" depressed class="view-button" :style="{ 'background-color': project.color }"
                :href="project.link"
@@ -126,7 +132,7 @@
   }
 
   .card-container {
-    height: 310px;
+    height: 350px;
   }
 
   .view-button {
