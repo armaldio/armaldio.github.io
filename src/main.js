@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import Vuetify from 'vuetify';
+import '@fortawesome/fontawesome-free/css/all.css';
 import 'vuetify/dist/vuetify.min.css';
 import App from './App';
 import router from './router';
@@ -16,6 +17,7 @@ Vue.use(Vuetify, {
     success: '#4CAF50',
     warning: '#FFC107',
   },
+  iconfont: 'fa',
 });
 
 Vue.config.productionTip = false;
