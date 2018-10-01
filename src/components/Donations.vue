@@ -9,12 +9,8 @@
         <div slot="header">Why should I donate ?</div>
         <v-card>
           <v-card-text class="grey darken-4">
-            <p>Before anything else, you <strong>DON'T HAVE TO</strong> donate to support us.</p>
-            <p>Sharing this server to your friends is even more important than money. Help the community grow!
-              (<a href="https://discord.me/construct">https://discord.me/construct</a>)</p>
-            <p>We have a Discord bot running on this server, and hosting it is made by ourself. But it costs money.
-              You can help us keep this bot alive with a small donation.
-              We plan to integrate even more features and integrations in relation to Construct in the next months</p>
+            <p>Before anything else, you <strong>DON'T HAVE TO</strong> donate to support me.</p>
+            <p>Most of the money goes back to the community, mainly for the hosting of my Discord bot for the Construct Community</p>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -33,8 +29,6 @@
           <v-card-text class="grey darken-4">
             <p>Also yes!</p>
             <p>I'm on Liberapay, as service that allow recurring payments as you like.</p>
-            <p>This page is not only for this Discord server but is also used for all my work on the web (Github, NPM,
-              etc...)</p>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -45,6 +39,8 @@
             <p>This is not a problem, the only important thing in the end is that you enjoy the tools I create.</p>
             <p>A thing that is even more important than making a donation is sharing my work. So, feel free to do so
               everywhere you can.</p>
+            <p>You can also share my Discord server about Construct to your friends, this is even more important than money. Help the community grow!
+              (<a href="https://discord.me/construct">https://discord.me/construct</a>)</p>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
