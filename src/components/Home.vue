@@ -32,28 +32,85 @@
       <v-tabs fixed-tabs v-model="selectedTab" slot="extension">
         <v-tab v-for="tab in tabs" :key="tab.search">{{ tab.name }}</v-tab>
       </v-tabs>
-      <v-tabs-items>
-        <Tab :projects="filteredProjects"></Tab>
-      </v-tabs-items>
+      <div class="grid">
+        <div class="item" v-for="(project, i) in projects" :class="[project.tags, `size-${getSize()}`]">
+          <div class="item-content">
+            <Project :id="`project-${i}`" :key="i" :project="project"></Project>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="testimonials">
+
+    </div>
+    <div class="certificates mt-5">
+      <h2 id="certificates" class="text-xs-center mb-5 display-2">Certificates</h2>
+      <v-dialog v-model="certificateDialog" width="80%">
+        <v-card>
+          <v-img contain
+                 height="70%"
+                 :src="images[selectedImageCertificate]"
+                 :lazy-src="images[selectedImageCertificate]"
+                 class="grey lighten-2 cursor">
+            <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+            </v-layout>
+          </v-img>
+        </v-card>
+      </v-dialog>
+      <v-container grid-list-sm fluid>
+        <v-layout row wrap justify-center>
+          <v-flex v-for="(image, index) in images" :key="image" xs12 lg6>
+            <v-card>
+              <v-img :src="image"
+                     :lazy-src="image"
+                     class="grey lighten-2"
+                     @click="selectedImageCertificate = index; certificateDialog = true">
+                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                  <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                </v-layout>
+              </v-img>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn target="_blank" href="https://ude.my/UC-ZLMRLAWU">See</v-btn>
+                <v-spacer></v-spacer>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </div>
   </v-container>
 </template>
 
 <script>
+  import Muuri from 'muuri';
   import Tab from './Tab';
   import projects from '../projects';
+  import Project from './Project';
 
   export default {
     name      : 'Home',
     components: {
       Tab,
+      Project,
     },
     data() {
       return {
         arrow      : false,
         selectedTab: 0,
         projects,
-        tabs       : [
+
+        grid: null,
+
+        certificateDialog       : false,
+        selectedImageCertificate: 0,
+
+        images: [
+          'https://udemy-certificate.s3.amazonaws.com/image/UC-ZLMRLAWU.jpg',
+        ],
+        tabs  : [
           {
             name  : 'All',
             search: 'all',
@@ -81,17 +138,49 @@
         ],
       };
     },
-    computed  : {
-      filteredProjects() {
-        const tab = this.tabs[this.selectedTab];
+    computed  : {},
+    watch     : {
+      selectedTab() {
+        const tab = this.tabs[ this.selectedTab ];
         if (tab.search === 'all') {
-          return this.projects;
+          console.log(this.grid.getItems());
+          this.grid.show(this.grid.getItems());
+          return;
         }
-        return this.projects.filter(x => x.tags.includes(tab.search));
+        this.grid.filter(`.${tab.search}`);
       },
     },
-    methods   : {},
+    methods   : {
+      getSize() {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs':
+            return '100';
+          case 'sm':
+            return '100';
+          case 'md':
+            return '50';
+          case 'lg':
+            return '33';
+          case 'xl':
+            return '25';
+          default:
+            return '50';
+        }
+      },
+    },
     mounted() {
+      this.grid = new Muuri('.grid', {
+        layout        : {
+          fillGaps: true,
+          rounding: false,
+        },
+        layoutOnResize: false,
+      });
+
+      window.addEventListener('resize', () => {
+        this.grid.layout();
+        this.grid.refreshItems();
+      });
     },
   };
 </script>
@@ -110,5 +199,59 @@
 
   .profile-pic {
     border-radius: 5px;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  /*
+  Muuri
+   */
+  .grid {
+    position: relative;
+  }
+
+  .item {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: #000;
+    color: #fff;
+    margin: 0;
+  }
+
+  .size-25 {
+    width: 25%;
+  }
+
+  .size-33 {
+    width: 33%;
+  }
+
+  .size-50 {
+    width: 50%;
+  }
+
+  .size-100 {
+    width: 100%;
+  }
+
+  .item.muuri-item-dragging {
+    z-index: 3;
+  }
+
+  .item.muuri-item-releasing {
+    z-index: 2;
+  }
+
+  .item.muuri-item-hidden {
+    z-index: 0;
+  }
+
+  .item-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 </style>

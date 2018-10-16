@@ -1,58 +1,56 @@
 <template>
-  <v-flex sm12 md6 lg4 xl3>
-    <v-card color="grey darken-4" class="white--text card-container">
-      <div v-if="project.pro" class="ribbon ribbon-top-right"><span>pro</span></div>
-      <div v-if="project.wip" class="ribbon ribbon-top-right"><span>wip</span></div>
+  <v-card color="grey darken-4" class="white--text card-container">
+    <div v-if="project.pro" class="ribbon ribbon-top-right"><span>pro</span></div>
+    <div v-if="project.wip" class="ribbon ribbon-top-right"><span>wip</span></div>
 
-      <img class="centered-image" width="120" height="auto" :src="project.image" alt="">
-      <v-card-title class="centered project-title">
-        <div class="headline pb-2">{{ project.title }}</div>
-      </v-card-title>
-      <v-card-text>
-        <vue-markdown class="text-xs-center" :watches="['source']" :source="project.description"></vue-markdown>
-        <div class="icons py-3">
-          <v-layout>
-            <v-flex xs2 offset-xs3>
-              <v-badge color="grey darken-2" v-if="stars > -1">
-                <span slot="badge">{{ stars }}</span>
-                <v-icon small>fas fa-star</v-icon>
-              </v-badge>
-            </v-flex>
-            <v-flex xs2>
-              <v-badge color="grey darken-2" v-if="watchers > -1">
-                <span slot="badge">{{ watchers }}</span>
-                <v-icon small right>fas fa-eye</v-icon>
-              </v-badge>
-            </v-flex>
-            <v-flex xs2>
-              <v-badge color="grey darken-2" v-if="forks > -1">
-                <span slot="badge">{{ forks }}</span>
-                <v-icon small right>fas fa-code-branch</v-icon>
-              </v-badge>
-            </v-flex>
-          </v-layout>
-        </div>
-      </v-card-text>
-      <v-card-actions>
-        <v-btn v-if="project.deprecated" depressed class="view-button" :style="{ 'background-color': project.color }"
-               :href="project.link"
-               target="_blank">
-          Deprecated
-          <v-icon small right>far fa-eye</v-icon>
-        </v-btn>
-        <v-btn v-else depressed class="view-button" :style="{ 'background-color': project.color }"
-               :href="project.link"
-               target="_blank">
-          View
-          <v-icon small right>far fa-eye</v-icon>
-        </v-btn>
-        <v-btn depressed color="grey" class="more-button">
-          More
-          <v-icon small right>fas fa-external-link-alt</v-icon>
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-flex>
+    <img class="centered-image" width="120" height="auto" :src="project.image" alt="">
+    <v-card-title class="centered project-title">
+      <div class="headline pb-2">{{ project.title }}</div>
+    </v-card-title>
+    <v-card-text>
+      <vue-markdown class="text-xs-center breaked" :watches="['source']" :source="project.description"></vue-markdown>
+      <div class="icons py-3">
+        <v-layout>
+          <v-flex xs2 offset-xs3>
+            <v-badge color="grey darken-2" v-if="stars > -1">
+              <span slot="badge">{{ stars }}</span>
+              <v-icon small>fas fa-star</v-icon>
+            </v-badge>
+          </v-flex>
+          <v-flex xs2>
+            <v-badge color="grey darken-2" v-if="watchers > -1">
+              <span slot="badge">{{ watchers }}</span>
+              <v-icon small right>fas fa-eye</v-icon>
+            </v-badge>
+          </v-flex>
+          <v-flex xs2>
+            <v-badge color="grey darken-2" v-if="forks > -1">
+              <span slot="badge">{{ forks }}</span>
+              <v-icon small right>fas fa-code-branch</v-icon>
+            </v-badge>
+          </v-flex>
+        </v-layout>
+      </div>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn v-if="project.deprecated" depressed class="view-button" :style="{ 'background-color': project.color }"
+             :href="project.link"
+             target="_blank">
+        Deprecated
+        <v-icon small right>far fa-eye</v-icon>
+      </v-btn>
+      <v-btn v-else depressed class="view-button" :style="{ 'background-color': project.color }"
+             :href="project.link"
+             target="_blank">
+        View
+        <v-icon small right>far fa-eye</v-icon>
+      </v-btn>
+      <v-btn disabled depressed color="grey" class="more-button">
+        Details
+        <v-icon small right>fas fa-external-link-alt</v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
@@ -83,7 +81,7 @@
         const match = regex.exec(this.project.link);
 
         if (match && match.length === 3) {
-          const githubInfos = await axios.get(`https://api.github.com/repos/${match[1]}/${match[2]}`);
+          const githubInfos = await axios.get(`https://api.github.com/repos/${match[ 1 ]}/${match[ 2 ]}`);
           this.stars = githubInfos.data.stargazers_count;
           this.watchers = githubInfos.data.watchers_count;
           this.forks = githubInfos.data.forks;
@@ -203,5 +201,9 @@
     left: 15px;
     top: 5px;
     transform: rotate(45deg);
+  }
+
+  .breaked {
+    overflow-wrap: break-word;
   }
 </style>
