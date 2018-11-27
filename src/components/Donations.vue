@@ -47,9 +47,9 @@
     </v-expansion-panel>
 
     <div class="text-xs-center my-5">
-      <v-btn color="blue" large href="https://www.paypal.me/armaldio">Paypal</v-btn>
-      <v-btn color="green" large href="https://coingate.com/pay/armaldio">Crypto</v-btn>
-      <v-btn color="orange" large href="https://en.liberapay.com/armaldio/donate">Liberapay</v-btn>
+      <v-btn color="blue" large target="_blank" href="https://www.paypal.me/armaldio">Paypal</v-btn>
+      <v-btn color="green" large target="_blank" href="https://myca.is/armaldio">Crypto</v-btn>
+      <v-btn color="orange" large target="_blank" href="https://en.liberapay.com/armaldio/donate">Liberapay</v-btn>
     </div>
 
     <div class="display-3 text-xs-center mb-5">▼ You can also register an account on Vultr.com ▼</div>

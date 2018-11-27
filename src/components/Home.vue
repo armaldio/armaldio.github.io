@@ -7,6 +7,8 @@
       <span>Hey, I'm Armaldio</span>
       <span>I'm a french guy that loves to code and experiment new techs ⚡</span>
       <span>I'm currently studying at Epitech Lyon, a French IT school (4th year)</span>
+      <br>
+      <span>➡️ Open to any remote freelance mission based on my skills ⬅️</span>
       <div class="d-inline-flex pt-5">
         <v-btn href="mailto:armaldio@gmail.com" color="green" large>
           Hire me
@@ -19,8 +21,15 @@
         </v-btn>
       </div>
       <v-btn
+        class="mt-3"
+        @click="showCV = true"
+        color="red"
+        large>
+        Standard CV (FR)
+      </v-btn>
+      <v-btn
         @click="$vuetify.goTo('#projects')"
-        class="mt-5 scroller"
+        class="mt-3 scroller"
         color="orange"
         large>
         View my projects
@@ -81,6 +90,29 @@
         </v-layout>
       </v-container>
     </div>
+    <v-dialog v-model="showCV" width="80%">
+      <v-card>
+        <v-card-title
+          class="headline"
+          primary-title
+        >
+          CV
+        </v-card-title>
+
+        <v-card-text>
+          <iframe src="https://docs.google.com/viewer?url=https://armaldio.xyz/static/CV.pdf" frameborder="0" height="500px" width="100%"></iframe>
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn flat @click="showCV = false">
+            OK
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -101,6 +133,8 @@
         arrow      : false,
         selectedTab: 0,
         projects,
+
+        showCV: false,
 
         grid: null,
 
