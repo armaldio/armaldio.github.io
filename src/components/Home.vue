@@ -100,7 +100,7 @@
         </v-card-title>
 
         <v-card-text>
-          <iframe src="https://docs.google.com/viewer?url=https://armaldio.xyz/static/CV.pdf" frameborder="0" height="500px" width="100%"></iframe>
+          <iframe src="https://drive.google.com/file/d/1Q0UYpDYvfpHm7XqsdgcPetq2LlJoClHW/preview" height="500px" width="100%"></iframe>
         </v-card-text>
 
         <v-divider></v-divider>
