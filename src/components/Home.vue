@@ -250,7 +250,7 @@
     display: block;
     position: absolute;
     z-index: 1;
-    background: #000;
+    background: #303030;
     color: #fff;
     margin: 0;
   }

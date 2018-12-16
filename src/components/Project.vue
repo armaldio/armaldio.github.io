@@ -2,6 +2,7 @@
   <v-card color="grey darken-4" class="white--text card-container">
     <div v-if="project.pro" class="ribbon ribbon-top-right"><span>pro</span></div>
     <div v-if="project.wip" class="ribbon ribbon-top-right"><span>wip</span></div>
+    <div v-if="project.deprecated" class="ribbon ribbon-top-right"><span>depr.</span></div>
 
     <img class="centered-image" width="120" height="auto" :src="project.image" alt="">
     <v-card-title class="centered project-title">
