@@ -19,7 +19,7 @@
         <v-card>
           <v-card-text class="grey darken-4">
             <p>Yes!</p>
-            <p>You can use the Paypal or Crypto button to make a 1 time donation in the currency you like.</p>
+            <p>You can use Paypal button to make a 1 time donation.</p>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -48,7 +48,6 @@
 
     <div class="text-xs-center my-5">
       <v-btn color="blue" large target="_blank" href="https://www.paypal.me/armaldio">Paypal</v-btn>
-      <v-btn color="green" large target="_blank" href="https://myca.is/armaldio">Crypto</v-btn>
       <v-btn color="orange" large target="_blank" href="https://en.liberapay.com/armaldio/donate">Liberapay</v-btn>
     </div>
 
