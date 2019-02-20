@@ -36,6 +36,15 @@ const projects = [
     tags       : [ 'web' ],
   },
   {
+    title      : 'Direct Appart',
+    description: 'Vacation apartment rental in Lyon, France',
+    color      : '#389824',
+    link       : 'https://directappart.fr',
+    image      : 'https://directappart.fr/wp-content/uploads/2017/01/DSC_2423_compressed.jpg',
+    pro        : true,
+    tags       : [ 'web' ],
+  },
+  {
     title      : 'Node.js modules',
     description: 'Node.js packages, mostly about Construct and Electron',
     color      : '#d01919',
@@ -44,11 +53,11 @@ const projects = [
     tags       : [ 'nodejs' ],
   },
   {
-    title      : 'Electron for Construct',
-    description: 'Complete set of tools to allow your Construct games to run with Electron',
+    title      : 'Electron For Construct',
+    description: 'Bring the power of Electron to your Construct games',
     color      : '#16ab39',
-    link       : 'https://github.com/ElectronForConstruct/template',
-    image      : '/static/img/electron-logo.png',
+    link       : 'https://github.com/ElectronForConstruct',
+    image      : 'https://avatars0.githubusercontent.com/u/24421609?s=200&v=4',
     tags       : [ 'electron', 'construct' ],
   },
   {

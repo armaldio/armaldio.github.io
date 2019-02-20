@@ -33,22 +33,12 @@
         </v-layout>
       </div>
     </v-card-text>
-    <v-card-actions>
-      <v-btn v-if="project.deprecated" depressed class="view-button" :style="{ 'background-color': project.color }"
-             :href="project.link"
-             target="_blank">
-        Deprecated
-        <v-icon small right>far fa-eye</v-icon>
-      </v-btn>
-      <v-btn v-else depressed class="view-button" :style="{ 'background-color': project.color }"
+    <v-card-actions class="card-actions">
+      <v-btn depressed class="view-button" :style="{ 'background-color': project.color }"
              :href="project.link"
              target="_blank">
         View
         <v-icon small right>far fa-eye</v-icon>
-      </v-btn>
-      <v-btn disabled depressed color="grey" class="more-button">
-        Details
-        <v-icon small right>fas fa-external-link-alt</v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -119,6 +109,10 @@
     transform: translate(100%);
   }
 
+  .project-title {
+    padding: 5px 10px;
+  }
+
   .centered-image {
     display: block;
     margin: 0 auto;
@@ -134,16 +128,14 @@
     height: 350px;
   }
 
-  .view-button {
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+  .card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .more-button {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
+  .view-button {
+    margin-bottom: 25px;
   }
 
   /* Ribbon */
