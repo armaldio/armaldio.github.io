@@ -7,6 +7,7 @@ const projects = [
     image      : '/static/img/ateliers.png',
     pro        : true,
     tags       : [ 'web', 'wordpress' ],
+    type: 'website',
   },
   {
     title      : 'Legion Handball',
@@ -16,6 +17,7 @@ const projects = [
     image      : '/static/img/legion.png',
     pro        : true,
     tags       : [ 'web', 'nodejs' ],
+    type: 'website',
   },
   {
     title      : 'Georges.tech',
@@ -25,6 +27,7 @@ const projects = [
     image      : 'https://www.appvizer.fr/media/application/1868/logo/logo-georges-le-robot-comptable.png',
     pro        : true,
     tags       : [ 'web' ],
+    type: 'website',
   },
   {
     title      : 'Direct Nature',
@@ -34,6 +37,7 @@ const projects = [
     image      : 'https://annuaire.laposte.fr/uploads/495/049/49504971000033/logo.jpg',
     pro        : true,
     tags       : [ 'web' ],
+    type: 'website',
   },
   {
     title      : 'Direct Appart',
@@ -42,7 +46,8 @@ const projects = [
     link       : 'https://directappart.fr',
     image      : 'https://directappart.fr/wp-content/uploads/2017/01/DSC_2423_compressed.jpg',
     pro        : true,
-    tags       : [ 'web' ],
+    tags       : [ 'web', 'wordpress' ],
+    type: 'website',
   },
   {
     title      : 'Node.js modules',
@@ -51,6 +56,7 @@ const projects = [
     link       : 'https://www.npmjs.com/~armaldio',
     image      : '/static/img/npm.png',
     tags       : [ 'nodejs' ],
+    type: 'other',
   },
   {
     title      : 'Electron For Construct',
@@ -59,6 +65,7 @@ const projects = [
     link       : 'https://github.com/ElectronForConstruct',
     image      : 'https://avatars0.githubusercontent.com/u/24421609?s=200&v=4',
     tags       : [ 'electron', 'construct' ],
+    type: 'app',
   },
   {
     title      : 'Discord',
@@ -67,6 +74,7 @@ const projects = [
     link       : 'https://discord.gg/0eLPLj96B4tUr1D3',
     image      : '/static/img/discordandc2.png',
     tags       : [ 'contruct', 'other' ],
+    type: 'other',
   },
   {
     title      : 'Github',
@@ -75,6 +83,7 @@ const projects = [
     link       : 'https://github.com/armaldio',
     image      : '/static/img/github.png',
     tags       : [ 'other' ],
+    type: 'other',
   },
   {
     title      : 'Construct plugins',
@@ -83,6 +92,7 @@ const projects = [
     link       : 'https://armaldio.itch.io/',
     image      : '/static/img/itch.jpg',
     tags       : [ 'construct' ],
+    type: 'other',
   },
   {
     title      : 'TIGER',
@@ -92,6 +102,7 @@ const projects = [
     image      : 'https://github.com/TIGER-PROJECT/tiger-editor/raw/master/assets/icons/github/icon.png',
     wip        : true,
     tags       : [ 'web', 'nodejs', 'electron' ],
+    type: 'app',
   },
   {
     title      : 'Android Messages for desktop',
@@ -100,6 +111,7 @@ const projects = [
     link       : 'https://github.com/Android-Messages-For-Desktop/android-messages-for-desktop',
     image      : 'https://avatars2.githubusercontent.com/u/40691851?s=200&v=4',
     tags       : [ 'web', 'nodejs', 'electron' ],
+    type: 'app',
   },
   {
     title      : 'Addon Installer',
@@ -108,6 +120,7 @@ const projects = [
     link       : 'https://github.com/WebCreationClub/AddonInstaller',
     image      : 'https://github.com/armaldio/AddonInstaller/raw/develop/store/Addoninstaller%20Icon%20(96).png',
     tags       : [ 'web', 'nodejs', 'electron', 'construct' ],
+    type: 'app',
   },
   {
     title      : 'Awesome Construct',
@@ -116,6 +129,7 @@ const projects = [
     link       : 'https://github.com/WebCreationClub/awesome-construct',
     image      : 'https://raw.githubusercontent.com/github/explore/c304601f028774885ef27f72e6fe2d331729d8bc/topics/awesome/awesome.png',
     tags       : [ 'web', 'construct' ],
+    type: 'other',
   },
   /* {
     title      : 'BulbHub',

@@ -1,47 +1,54 @@
 <template>
-  <v-card color="grey darken-4" class="white--text card-container">
-    <div v-if="project.pro" class="ribbon ribbon-top-right"><span>pro</span></div>
-    <div v-if="project.wip" class="ribbon ribbon-top-right"><span>wip</span></div>
-    <div v-if="project.deprecated" class="ribbon ribbon-top-right"><span>depr.</span></div>
-
-    <img class="centered-image" width="120" height="auto" :src="project.image" alt="">
-    <v-card-title class="centered project-title">
-      <div class="headline pb-2">{{ project.title }}</div>
-    </v-card-title>
-    <v-card-text>
-      <vue-markdown class="text-xs-center breaked" :watches="['source']" :source="project.description"></vue-markdown>
-      <div class="icons py-3">
-        <v-layout>
-          <v-flex xs2 offset-xs3>
-            <v-badge color="grey darken-2" v-if="stars > -1">
-              <span slot="badge">{{ stars }}</span>
-              <v-icon small>fas fa-star</v-icon>
-            </v-badge>
-          </v-flex>
-          <v-flex xs2>
-            <v-badge color="grey darken-2" v-if="watchers > -1">
-              <span slot="badge">{{ watchers }}</span>
-              <v-icon small right>fas fa-eye</v-icon>
-            </v-badge>
-          </v-flex>
-          <v-flex xs2>
-            <v-badge color="grey darken-2" v-if="forks > -1">
-              <span slot="badge">{{ forks }}</span>
-              <v-icon small right>fas fa-code-branch</v-icon>
-            </v-badge>
-          </v-flex>
-        </v-layout>
-      </div>
-    </v-card-text>
-    <v-card-actions class="card-actions">
-      <v-btn depressed class="view-button" :style="{ 'background-color': project.color }"
-             :href="project.link"
-             target="_blank">
-        View
-        <v-icon small right>far fa-eye</v-icon>
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+    <div class="card card-container">
+        <div class="top">
+            <div class="middle">
+                <img class="centered-image" width="120" height="auto" :src="project.image" alt="">
+                <div class="centered card-title">
+                    <div class="headline pb-2">{{ project.title }}</div>
+                </div>
+                <div class="card-text text-xs-center">
+                    <vue-markdown
+                            :watches="['source']"
+                            :source="project.description">
+                    </vue-markdown>
+                </div>
+                <div class="icons py-3" v-if="stars > -1 || watchers > -1 || forks > -1">
+                    <v-layout>
+                        <v-flex xs2 offset-xs3>
+                            <template v-if="stars > -1">
+                                <v-icon small>fas fa-star</v-icon>
+                                <span slot="badge">{{ stars }}</span>
+                            </template>
+                        </v-flex>
+                        <v-flex xs2>
+                            <template v-if="watchers > -1">
+                                <v-icon small right>fas fa-eye</v-icon>
+                                <span slot="badge">{{ watchers }}</span>
+                            </template>
+                        </v-flex>
+                        <v-flex xs2>
+                            <template v-if="forks > -1">
+                                <v-icon small right>fas fa-code-branch</v-icon>
+                                <span slot="badge">{{ forks }}</span>
+                            </template>
+                        </v-flex>
+                    </v-layout>
+                </div>
+            </div>
+        </div>
+        <div class="card-actions">
+            <v-layout row wrap>
+                <v-flex xs12 class="text-xs-center">
+                    <v-btn depressed class="view-button" :style="{ 'background-color': project.color }"
+                           :href="project.link"
+                           target="_blank">
+                        Open
+                        <!--<v-icon small right>far fa-eye</v-icon>-->
+                    </v-btn>
+                </v-flex>
+            </v-layout>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -83,120 +90,65 @@
 </script>
 
 <style scoped>
+    .title {
+        font-size: 23px;
+    }
 
-  .container {
-    padding: 0;
-  }
+    .card-title {
+        padding: 5px 10px;
+    }
 
-  .title {
-    font-size: 23px;
-  }
+    .card-text {
+        width: 90%;
+        margin: 0 auto;
+    }
 
-  .v-card__actions {
-    padding: 0;
-  }
+    .centered-image {
+        display: block;
+        margin: 0 auto;
+        padding: 15px;
+    }
 
-  .v-card__actions > a, .v-card__actions > button, .v-card__actions .v-btn + .v-btn {
-    width: 50%;
-    padding: 0;
-    margin-left: 0;
+    .centered div {
+        text-align: center;
+        width: 100%;
+    }
 
-    position: absolute;
-    bottom: 0;
-  }
+    .card-container {
+        height: 350px;
+        background-color: #404040;
+    }
 
-  .more-button {
-    transform: translate(100%);
-  }
+    .card-actions {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        /*background-color: #626262;*/
+    }
 
-  .project-title {
-    padding: 5px 10px;
-  }
+    .top {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 290px;
 
-  .centered-image {
-    display: block;
-    margin: 0 auto;
-    padding: 15px;
-  }
+        display: flex; /* contexte sur le parent */
+        flex-direction: column; /* direction d'affichage verticale */
+        justify-content: center;
+        /*background-color: #626262;*/
+    }
 
-  .centered div {
-    text-align: center;
-    width: 100%;
-  }
+    .is-selected {
 
-  .card-container {
-    height: 350px;
-  }
+    }
 
-  .card-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .view-button {
+        /*margin-bottom: 25px;*/
+        margin: 10px;
+    }
 
-  .view-button {
-    margin-bottom: 25px;
-  }
-
-  /* Ribbon */
-  .ribbon {
-    width: 150px;
-    height: 100px;
-    overflow: hidden;
-    position: absolute;
-  }
-
-  .ribbon::before,
-  .ribbon::after {
-    position: absolute;
-    z-index: -1;
-    content: '';
-    display: block;
-    border: 5px solid #2980b9;
-  }
-
-  .ribbon span {
-    position: absolute;
-    display: block;
-    width: 225px;
-    padding: 10px 0;
-    background-color: #3498db;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-    color: #fff;
-    font: 700 18px/1 'Lato', sans-serif;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  .ribbon-top-right {
-    top: 0;
-    right: 0;
-  }
-
-  .ribbon-top-right::before,
-  .ribbon-top-right::after {
-    border-top-color: transparent;
-    border-right-color: transparent;
-  }
-
-  .ribbon-top-right::before {
-    top: 0;
-    left: 0;
-  }
-
-  .ribbon-top-right::after {
-    bottom: 0;
-    right: 0;
-  }
-
-  .ribbon-top-right span {
-    left: 15px;
-    top: 5px;
-    transform: rotate(45deg);
-  }
-
-  .breaked {
-    overflow-wrap: break-word;
-  }
+    .breaked {
+        overflow-wrap: break-word;
+    }
 </style>

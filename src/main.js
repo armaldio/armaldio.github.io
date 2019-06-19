@@ -12,7 +12,7 @@ import router from './router';
 Vue.use(Viewer);
 Vue.use(Vuetify, {
   theme   : {
-    primary  : '#ee44aa',
+    primary  : '#245784',
     secondary: '#424242',
     accent   : '#82B1FF',
     error    : '#FF5252',

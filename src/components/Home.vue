@@ -1,123 +1,136 @@
 <template>
-  <v-container fluid>
-    <div class="fullHeight text-xs-center">
-      <img class="mb-5 profile-pic"
-           src="https://fr.gravatar.com/userimage/60115314/7100a2db99dac4b3ba928ce1a1ea0012.png?size=500"
-           height="150"/>
-      <span>Hey, I'm Armaldio</span>
-      <span>I'm a french guy that loves to code and experiment new techs ⚡</span>
-      <span>I'm currently studying at Epitech Lyon, a French IT school (4th year)</span>
-      <br>
-      <span>➡️ Open to any remote freelance mission based on my skills ⬅️</span>
-      <div class="d-inline-flex pt-5">
-        <v-btn href="mailto:armaldio@gmail.com" color="green" large>
-          Hire me
-          <v-icon small right dark>far fa-envelope</v-icon>
-        </v-btn>
-        <span>or</span>
-        <v-btn to="/donations" color="blue" large>
-          Support me
-          <v-icon small right dark>fas fa-money-bill</v-icon>
-        </v-btn>
-      </div>
-      <v-btn
-        class="mt-3"
-        @click="showCV = true"
-        color="red"
-        large>
-        Standard CV (FR)
-      </v-btn>
-      <v-btn
-        @click="$vuetify.goTo('#projects')"
-        class="mt-3 scroller"
-        color="orange"
-        large>
-        View my projects
-        <v-icon small right dark>fas fa-arrow-down</v-icon>
-      </v-btn>
-    </div>
-    <div class="projects mt-5">
-      <h2 id="projects" class="text-xs-center mb-5 display-2">Projects</h2>
-      <v-tabs fixed-tabs v-model="selectedTab" slot="extension">
-        <v-tab v-for="tab in tabs" :key="tab.search">{{ tab.name }}</v-tab>
-      </v-tabs>
-      <div class="grid">
-        <div class="item" v-for="(project, i) in projects" :class="[project.tags, `size-${getSize()}`]">
-          <div class="item-content">
-            <Project :id="`project-${i}`" :key="i" :project="project"></Project>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="testimonials">
-
-    </div>
-    <div class="certificates mt-5">
-      <h2 id="certificates" class="text-xs-center mb-5 display-2">Certificates</h2>
-      <v-dialog v-model="certificateDialog" width="80%">
-        <v-card>
-          <v-img contain
-                 height="70%"
-                 :src="images[selectedImageCertificate]"
-                 :lazy-src="images[selectedImageCertificate]"
-                 class="grey lighten-2 cursor">
-            <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+    <div id="home">
+        <v-container fluid class="fullHeight">
+            <div class="entry">
+                <img class="mb-5 profile-pic"
+                     src="https://fr.gravatar.com/userimage/60115314/7100a2db99dac4b3ba928ce1a1ea0012.png?size=500"
+                     height="150"/>
+                <span>Hey, I'm Quentin "Armaldio" Goinaud</span>
+            </div>
+            <v-layout row wrap class="pt-5">
+                <v-flex xs6>
+                    <div class="text-xs-left">
+                        <p class="headline">
+                            <v-icon large class="mr-3">fas fa-language</v-icon>
+                            French, English
+                        </p>
+                        <p class="headline">
+                            <v-icon large class="mr-3">fas fa-graduation-cap</v-icon>
+                            Epitech Lyon
+                        </p>
+                        <p class="headline">
+                            <v-icon large class="mr-3">fas fa-door-open</v-icon>
+                            Open
+                            <v-btn href="mailto:armaldio@gmail.com" color="green" round>
+                                Hire me
+                                <v-icon small right dark>far fa-envelope</v-icon>
+                            </v-btn>
+                        </p>
+                        <br>
+                        <p class="headline">
+                            <v-icon large class="mr-3">fas fa-desktop</v-icon>
+                            Full Stack developer
+                            <v-btn color="red"
+                                   round
+                                   href="https://drive.google.com/file/d/1Q0UYpDYvfpHm7XqsdgcPetq2LlJoClHW/view"
+                                   target="_blank">
+                                View my resume (FR)
+                            </v-btn>
+                        </p>
+                        <p class="headline">
+                            <v-icon large class="mr-3">fab fa-github</v-icon>
+                            Open Source contributor
+                            <v-btn to="/donations" color="blue" round>
+                                Support me
+                                <v-icon small right dark>fas fa-money-bill</v-icon>
+                            </v-btn>
+                        </p>
+                        <p class="headline">
+                            <v-icon large class="mr-3">fas fa-rocket</v-icon>
+                            Tech enthusiast
+                        </p>
+                        <p class="headline">
+                            <v-icon large class="mr-3">fas fa-layer-group</v-icon>
+                            Stack
+                            <img class="icon-text-align" src="https://onlyweb-formation.com/uploads/mod_logo/js.png" alt="" height="36">
+                            <img class="icon-text-align" src="https://cdn-images-1.medium.com/max/672/1*GrnZQhGidCAjnfE7CUyzcA.png" alt="" height="36">
+                            <img class="icon-text-align" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/128px-Electron_Software_Framework_Logo.svg.png" alt="" height="36">
+                            <img class="icon-text-align" src="https://cdn2.iconfinder.com/data/icons/nodejs-1/128/nodejs-128.png" alt="" height="36">
+                        </p>
+                    </div>
+                </v-flex>
+                <v-flex xs6 class="text-xs-center">
+                    <div class="d-inline-flex pt-5">
+                        <img class="code-image" src="/static/code.svg" height="250">
+                    </div>
+                </v-flex>
             </v-layout>
-          </v-img>
-        </v-card>
-      </v-dialog>
-      <v-container grid-list-sm fluid>
-        <v-layout row wrap justify-center>
-          <v-flex v-for="(image, index) in images" :key="image" xs12 lg6>
-            <v-card>
-              <v-img :src="image"
-                     :lazy-src="image"
-                     class="grey lighten-2"
-                     @click="selectedImageCertificate = index; certificateDialog = true">
-                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                  <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                </v-layout>
-              </v-img>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn target="_blank" href="https://ude.my/UC-ZLMRLAWU">See</v-btn>
-                <v-spacer></v-spacer>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+        </v-container>
+        <v-container fluid>
+            <div class="split split-1"></div>
+
+            <div class="display-3 py-3" id="websites">
+                Websites
+            </div>
+            <div class="right-shape"></div>
+            <flickity :options="flickityOptions">
+                <div class="carousel-cell" v-for="(project, i) in projects">
+                    <Project :key="i" :project="project"></Project>
+                </div>
+            </flickity>
+
+            <div class="split split-2"></div>
+
+            <div class="display-3 py-3" id="apps">
+                Apps
+            </div>
+            <flickity :options="flickityOptionsInverted">
+                <div class="carousel-cell" v-for="(project, i) in projects">
+                    <Project :key="i" :project="project"></Project>
+                </div>
+            </flickity>
+
+            <div class="split split-3"></div>
+
+            <div class="display-3 py-3" id="other">
+                Other
+            </div>
+            <flickity :options="flickityOptionsCentered">
+                <div class="carousel-cell" v-for="(project, i) in projects">
+                    <Project :key="i" :project="project"></Project>
+                </div>
+            </flickity>
+
+            <div class="split split-4"></div>
+
+            <div class="certificates mt-5">
+                <h2 id="certificates" class="text-xs-center mb-5 display-2">Certificates</h2>
+                <v-container grid-list-sm fluid>
+                    <v-layout row wrap justify-center>
+                        <v-flex v-for="(image, index) in images" :key="image" xs12 lg6>
+                            <v-img :src="image"
+                                   :lazy-src="image"
+                                   class="grey lighten-2"
+                                   @click="selectedImageCertificate = index; certificateDialog = true">
+                                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                                </v-layout>
+                            </v-img>
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn target="_blank" href="https://ude.my/UC-ZLMRLAWU">See</v-btn>
+                                <v-spacer></v-spacer>
+                            </v-card-actions>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </div>
+        </v-container>
     </div>
-    <v-dialog v-model="showCV" width="80%">
-      <v-card>
-        <v-card-title
-          class="headline"
-          primary-title
-        >
-          CV
-        </v-card-title>
-
-        <v-card-text>
-          <iframe src="https://drive.google.com/file/d/1Q0UYpDYvfpHm7XqsdgcPetq2LlJoClHW/preview" height="500px" width="100%"></iframe>
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn flat @click="showCV = false">
-            OK
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </v-container>
 </template>
 
 <script>
-  import Muuri from 'muuri';
+  import Flickity from 'vue-flickity';
   import Tab from './Tab';
   import projects from '../projects';
   import Project from './Project';
@@ -125,18 +138,29 @@
   export default {
     name      : 'Home',
     components: {
+      Flickity,
       Tab,
       Project,
     },
     data() {
       return {
+        flickityOptions        : {
+          autoPlay: false,
+        },
+        flickityOptionsInverted: {
+          autoPlay   : false,
+          rightToLeft: true,
+        },
+        flickityOptionsCentered: {
+          autoPlay   : false,
+          rightToLeft: false,
+        },
+
         arrow      : false,
         selectedTab: 0,
         projects,
 
         showCV: false,
-
-        grid: null,
 
         certificateDialog       : false,
         selectedImageCertificate: 0,
@@ -144,148 +168,103 @@
         images: [
           'https://udemy-certificate.s3.amazonaws.com/image/UC-ZLMRLAWU.jpg',
         ],
-        tabs  : [
-          {
-            name  : 'All',
-            search: 'all',
-          },
-          {
-            name  : 'Node.js',
-            search: 'nodejs',
-          },
-          {
-            name  : 'Electron',
-            search: 'electron',
-          },
-          {
-            name  : 'Web',
-            search: 'web',
-          },
-          {
-            name  : 'Construct 2 / 3',
-            search: 'construct',
-          },
-          {
-            name  : 'Other',
-            search: 'other',
-          },
-        ],
       };
     },
     computed  : {},
-    watch     : {
-      selectedTab() {
-        const tab = this.tabs[ this.selectedTab ];
-        if (tab.search === 'all') {
-          console.log(this.grid.getItems());
-          this.grid.show(this.grid.getItems());
-          return;
-        }
-        this.grid.filter(`.${tab.search}`);
-      },
-    },
-    methods   : {
-      getSize() {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs':
-            return '100';
-          case 'sm':
-            return '100';
-          case 'md':
-            return '50';
-          case 'lg':
-            return '33';
-          case 'xl':
-            return '25';
-          default:
-            return '50';
-        }
-      },
-    },
-    mounted() {
-      this.grid = new Muuri('.grid', {
-        layout        : {
-          fillGaps: true,
-          rounding: false,
-        },
-        layoutOnResize: false,
-      });
-
-      window.addEventListener('resize', () => {
-        this.grid.layout();
-        this.grid.refreshItems();
-      });
-    },
   };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .fullHeight {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+<style>
+    .carousel-cell {
+        width: 350px;
+        height: 350px;
+        margin-right: 50px;
+        counter-increment: carousel-cell;
+    }
 
-    font-size: 35px;
-  }
+    .carousel-cell {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    }
 
-  .profile-pic {
-    border-radius: 5px;
-  }
+    .carousel-cell:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
 
-  .cursor {
-    cursor: pointer;
-  }
+    .flickity-viewport {
+        height: 400px !important;
+    }
 
-  /*
-  Muuri
-   */
-  .grid {
-    position: relative;
-  }
+    .fullHeight {
+        font-size: 35px;
+    }
 
-  .item {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    background: #303030;
-    color: #fff;
-    margin: 0;
-  }
+    .entry {
+        padding-top: 92px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: stretch;
+    }
 
-  .size-25 {
-    width: 25%;
-  }
+    @media only screen and (max-device-width: 768px) and (orientation: portrait) {
+        .fullHeight {
+            font-size: 20px;
+        }
+    }
 
-  .size-33 {
-    width: 33%;
-  }
+    .profile-pic {
+        border-radius: 5px;
+    }
 
-  .size-50 {
-    width: 50%;
-  }
+    @media only screen and (max-device-width: 768px) and (orientation: portrait) {
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+        }
+    }
 
-  .size-100 {
-    width: 100%;
-  }
+    .cursor {
+        cursor: pointer;
+    }
 
-  .item.muuri-item-dragging {
-    z-index: 3;
-  }
+    .padding-around {
+        padding: 0 10px;
+    }
 
-  .item.muuri-item-releasing {
-    z-index: 2;
-  }
+    .split {
+        position: absolute;
+        height: 508px;
+        width: 100%;
+        left: 0;
+        /*background-image: linear-gradient(to top, #2196f3, #1d89e1, #177cd0, #1170bf, #0964ae);*/
+        background-color: #2196f3;
+    }
 
-  .item.muuri-item-hidden {
-    z-index: 0;
-  }
+    .split-1 {
+        clip-path: polygon(0 15%, 0% 100%, 80% 100%);
+    }
 
-  .item-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
+    .split-2 {
+        clip-path: polygon(25% 0%, 100% 0, 100% 100%, 50% 100%);
+    }
+
+    .split-3 {
+        clip-path: polygon(22% 0, 77% 0, 85% 100%, 0 100%);
+    }
+    .split-4 {
+        clip-path: polygon(0 0, 85% 0, 73% 21%, 37% 35%);
+    }
+
+    .display-3 {
+        mix-blend-mode: difference;
+    }
+
+    .icon-text-align {
+        vertical-align: middle;
+    }
 </style>
