@@ -151,4 +151,8 @@
     .breaked {
         overflow-wrap: break-word;
     }
+
+    .small-card {
+
+    }
 </style>

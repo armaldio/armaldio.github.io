@@ -1,14 +1,14 @@
 <template>
     <v-app :dark="true" id="app-container">
-        <div id="clip"></div>
+        <div id="clip" class="hidden-sm-and-down"></div>
 
         <v-toolbar flat absolute :hidden="$vuetify.breakpoint.mdAndDown" class="toolbar">
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn flat @click="$vuetify.goTo('#websites', {offset: -300})">Websites</v-btn>
-                <v-btn flat @click="$vuetify.goTo('#apps', {offset: -300})">Apps</v-btn>
-                <v-btn flat @click="$vuetify.goTo('#other', {offset: -300})">Other</v-btn>
-                <v-btn flat @click="$vuetify.goTo('#certificates', {offset: -300})">Certificates</v-btn>
+                <v-btn flat @click="$vuetify.goTo('#websites', {offset: -200})">Websites</v-btn>
+                <v-btn flat @click="$vuetify.goTo('#apps', {offset: -200})">Apps</v-btn>
+                <v-btn flat @click="$vuetify.goTo('#other', {offset: -200})">Other</v-btn>
+                <v-btn flat @click="$vuetify.goTo('#certificates', {offset: -200})">Certificates</v-btn>
             </v-toolbar-items>
         </v-toolbar>
         <v-content>
@@ -103,6 +103,11 @@
 <style>
     html {
         overflow: auto;
+        font-family: Roboto,sans-serif;
+    }
+
+    .mailtoui-modal {
+        font-size: 20px;
     }
 
     .v-icon {

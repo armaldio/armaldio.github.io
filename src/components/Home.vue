@@ -1,15 +1,26 @@
+<!--
+ // todo
+- Discord show live badge
+- Hover card show badges tech
+- Donation page have shapes
+- CLickableCertificates
+- https://github.com/michalsnik/aos/issues/87#issuecomment-313558488
+- Responsive footer
+- Text on blue shape
+ -->
 <template>
     <div id="home">
         <v-container fluid class="fullHeight">
-            <div class="entry">
+            <div class="entry text-xs-center text-sm-left"
+                 :class="{ 'top-padded': $vuetify.breakpoint.mdAndUp, 'center-aligned-img': $vuetify.breakpoint.smAndDown }">
                 <img class="mb-5 profile-pic"
                      src="https://fr.gravatar.com/userimage/60115314/7100a2db99dac4b3ba928ce1a1ea0012.png?size=500"
                      height="150"/>
                 <span>Hey, I'm Quentin "Armaldio" Goinaud</span>
             </div>
-            <v-layout row wrap class="pt-5">
+            <v-layout :column="$vuetify.breakpoint.mdAndDown" wrap class="pt-5">
                 <v-flex xs6>
-                    <div class="text-xs-left">
+                    <div class="text-xs-left resume">
                         <p class="headline">
                             <v-icon large class="mr-3">fas fa-language</v-icon>
                             French, English
@@ -21,7 +32,7 @@
                         <p class="headline">
                             <v-icon large class="mr-3">fas fa-door-open</v-icon>
                             Open
-                            <v-btn href="mailto:armaldio@gmail.com" color="green" round>
+                            <v-btn class="mailtoui" href="mailto:contact@armaldio.xyz" color="green" round>
                                 Hire me
                                 <v-icon small right dark>far fa-envelope</v-icon>
                             </v-btn>
@@ -52,14 +63,21 @@
                         <p class="headline">
                             <v-icon large class="mr-3">fas fa-layer-group</v-icon>
                             Stack
-                            <img class="icon-text-align" src="https://onlyweb-formation.com/uploads/mod_logo/js.png" alt="" height="36">
-                            <img class="icon-text-align" src="https://cdn-images-1.medium.com/max/672/1*GrnZQhGidCAjnfE7CUyzcA.png" alt="" height="36">
-                            <img class="icon-text-align" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/128px-Electron_Software_Framework_Logo.svg.png" alt="" height="36">
-                            <img class="icon-text-align" src="https://cdn2.iconfinder.com/data/icons/nodejs-1/128/nodejs-128.png" alt="" height="36">
+                            <img class="icon-text-align" src="https://onlyweb-formation.com/uploads/mod_logo/js.png"
+                                 alt="" height="36">
+                            <img class="icon-text-align"
+                                 src="https://cdn-images-1.medium.com/max/672/1*GrnZQhGidCAjnfE7CUyzcA.png" alt=""
+                                 height="36">
+                            <img class="icon-text-align"
+                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/128px-Electron_Software_Framework_Logo.svg.png"
+                                 alt="" height="36">
+                            <img class="icon-text-align"
+                                 src="https://cdn2.iconfinder.com/data/icons/nodejs-1/128/nodejs-128.png" alt=""
+                                 height="36">
                         </p>
                     </div>
                 </v-flex>
-                <v-flex xs6 class="text-xs-center">
+                <v-flex xs6 class="text-xs-center hidden-sm-and-down">
                     <div class="d-inline-flex pt-5">
                         <img class="code-image" src="/static/code.svg" height="250">
                     </div>
@@ -67,60 +85,56 @@
             </v-layout>
         </v-container>
         <v-container fluid>
-            <div class="split split-1"></div>
+            <div class="split split-1 hidden-sm-and-down"></div>
 
             <div class="display-3 py-3" id="websites">
                 Websites
             </div>
             <div class="right-shape"></div>
-            <flickity :options="flickityOptions">
-                <div class="carousel-cell" v-for="(project, i) in projects">
+            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}" :options="flickityOptions">
+                <div class="carousel-cell" v-for="(project, i) in websites">
                     <Project :key="i" :project="project"></Project>
                 </div>
             </flickity>
 
-            <div class="split split-2"></div>
+            <div class="split split-2 hidden-sm-and-down"></div>
 
             <div class="display-3 py-3" id="apps">
                 Apps
             </div>
-            <flickity :options="flickityOptionsInverted">
-                <div class="carousel-cell" v-for="(project, i) in projects">
+            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}" :options="flickityOptionsInverted">
+                <div class="carousel-cell" v-for="(project, i) in apps">
                     <Project :key="i" :project="project"></Project>
                 </div>
             </flickity>
 
-            <div class="split split-3"></div>
+            <div class="split split-3 hidden-sm-and-down"></div>
 
             <div class="display-3 py-3" id="other">
                 Other
             </div>
-            <flickity :options="flickityOptionsCentered">
-                <div class="carousel-cell" v-for="(project, i) in projects">
+            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}" :options="flickityOptionsCentered">
+                <div class="carousel-cell" v-for="(project, i) in other">
                     <Project :key="i" :project="project"></Project>
                 </div>
             </flickity>
 
-            <div class="split split-4"></div>
+            <div class="split split-4 hidden-sm-and-down"></div>
 
+            <div class="display-3 pb-3 mt-5" id="certificates">
+                Certificates
+            </div>
             <div class="certificates mt-5">
-                <h2 id="certificates" class="text-xs-center mb-5 display-2">Certificates</h2>
                 <v-container grid-list-sm fluid>
                     <v-layout row wrap justify-center>
-                        <v-flex v-for="(image, index) in images" :key="image" xs12 lg6>
+                        <v-flex v-for="(image, index) in images" :key="image" xs6 lg3>
                             <v-img :src="image"
                                    :lazy-src="image"
                                    class="grey lighten-2"
-                                   @click="selectedImageCertificate = index; certificateDialog = true">
-                                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                                </v-layout>
+                                   contain
+                                   target="_blank" href="https://ude.my/UC-ZLMRLAWU"
+                            >
                             </v-img>
-                            <v-card-actions>
-                                <v-spacer></v-spacer>
-                                <v-btn target="_blank" href="https://ude.my/UC-ZLMRLAWU">See</v-btn>
-                                <v-spacer></v-spacer>
-                            </v-card-actions>
                         </v-flex>
                     </v-layout>
                 </v-container>
@@ -145,15 +159,21 @@
     data() {
       return {
         flickityOptions        : {
-          autoPlay: false,
+          autoPlay       : false,
+          prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
+          pageDots       : false,
         },
         flickityOptionsInverted: {
-          autoPlay   : false,
-          rightToLeft: true,
+          autoPlay       : false,
+          rightToLeft    : true,
+          prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
+          pageDots       : false,
         },
         flickityOptionsCentered: {
-          autoPlay   : false,
-          rightToLeft: false,
+          autoPlay       : false,
+          rightToLeft    : false,
+          prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
+          pageDots       : false,
         },
 
         arrow      : false,
@@ -170,7 +190,18 @@
         ],
       };
     },
-    computed  : {},
+    computed  : {
+      websites() {
+        console.log(this.projects);
+        return this.projects.filter(project => project.type === 'website');
+      },
+      apps() {
+        return this.projects.filter(project => project.type === 'app');
+      },
+      other() {
+        return this.projects.filter(project => project.type === 'other');
+      },
+    },
   };
 </script>
 
@@ -192,6 +223,10 @@
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
 
+    .small-card, .small-card .carousel-cell {
+        width: 250px;
+    }
+
     .flickity-viewport {
         height: 400px !important;
     }
@@ -200,8 +235,15 @@
         font-size: 35px;
     }
 
-    .entry {
+    .top-padded {
         padding-top: 92px;
+    }
+
+    .center-aligned-img img {
+        margin: 0 auto;
+    }
+
+    .entry {
         text-align: left;
         display: flex;
         flex-direction: column;
@@ -214,6 +256,12 @@
     @media only screen and (max-device-width: 768px) and (orientation: portrait) {
         .fullHeight {
             font-size: 20px;
+        }
+    }
+
+    @media only screen and (max-device-width: 560px) and (orientation: portrait) {
+        .headline, .headline a, .headline i {
+            font-size: 16px !important;
         }
     }
 
@@ -256,6 +304,7 @@
     .split-3 {
         clip-path: polygon(22% 0, 77% 0, 85% 100%, 0 100%);
     }
+
     .split-4 {
         clip-path: polygon(0 0, 85% 0, 73% 21%, 37% 35%);
     }
@@ -267,4 +316,5 @@
     .icon-text-align {
         vertical-align: middle;
     }
+
 </style>
