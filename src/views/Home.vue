@@ -2,7 +2,6 @@
  // todo
 - Hover card show badges tech
 - https://github.com/michalsnik/aos/issues/87#issuecomment-313558488
-- Responsive footer
  -->
 <template>
     <div id="home">
