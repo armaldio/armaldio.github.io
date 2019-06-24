@@ -20,6 +20,16 @@ const projects = [
     type: 'website',
   },
   {
+    title      : 'Naturashop',
+    description: 'E-commerce website about organic and natural products',
+    color      : '#389824',
+    link       : 'https://naturashop.fr',
+    image      : '/static/img/naturashop.jpg',
+    pro        : true,
+    tags       : [ 'web' ],
+    type: 'website',
+  },
+  {
     title      : 'Direct Appart',
     description: 'Vacation apartment rental in Lyon, France',
     color      : '#389824',
