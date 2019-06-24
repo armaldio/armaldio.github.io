@@ -13,8 +13,7 @@
                  'center-aligned-img': $vuetify.breakpoint.smAndDown }"
             >
                 <img class="mb-5 profile-pic"
-                     src="https://fr.gravatar.com/userimage/60115314/7100a2db99dac4b3ba928ce1a1ea0012.png?size=500"
-                     height="150"/>
+                     src="https://fr.gravatar.com/userimage/60115314/7100a2db99dac4b3ba928ce1a1ea0012.png?size=150"/>
                 <span>Hey, I'm Quentin "Armaldio" Goinaud</span>
             </div>
             <v-layout :column="$vuetify.breakpoint.mdAndDown" wrap class="pt-5">
