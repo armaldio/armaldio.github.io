@@ -177,7 +177,7 @@ export default {
       },
       flickityOptionsInverted: {
         autoPlay: false,
-        rightToLeft: true,
+        rightToLeft: !this.$vuetify.breakpoint.xsOnly,
         prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
         pageDots: this.$vuetify.breakpoint.xsOnly,
       },

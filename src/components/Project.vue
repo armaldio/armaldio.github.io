@@ -9,7 +9,8 @@
                 <div class="card-text text-xs-center">
                     <span v-html="toHTML(project.description)"></span>
                 </div>
-                <div class="py-3" v-if="stars > -1 || watchers > -1 || forks > -1">
+                <div class="py-3" v-if="(stars > -1 || watchers > -1 || forks > -1) &&
+                 !$vuetify.breakpoint.xsOnly">
                     <v-layout align-center justify-center>
                         <v-flex xs3>
                             <template v-if="stars > -1">
