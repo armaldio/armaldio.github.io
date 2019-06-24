@@ -1,18 +1,17 @@
 <!--
  // todo
-- Discord show live badge
 - Hover card show badges tech
-- Donation page have shapes
-- CLickableCertificates
 - https://github.com/michalsnik/aos/issues/87#issuecomment-313558488
 - Responsive footer
-- Text on blue shape
  -->
 <template>
     <div id="home">
+        <div id="clip" class="hidden-sm-and-down"></div>
         <v-container fluid class="fullHeight">
             <div class="entry text-xs-center text-sm-left"
-                 :class="{ 'top-padded': $vuetify.breakpoint.mdAndUp, 'center-aligned-img': $vuetify.breakpoint.smAndDown }">
+                 :class="{ 'top-padded': $vuetify.breakpoint.mdAndUp,
+                 'center-aligned-img': $vuetify.breakpoint.smAndDown }"
+            >
                 <img class="mb-5 profile-pic"
                      src="https://fr.gravatar.com/userimage/60115314/7100a2db99dac4b3ba928ce1a1ea0012.png?size=500"
                      height="150"/>
@@ -32,7 +31,10 @@
                         <p class="headline">
                             <v-icon large class="mr-3">fas fa-door-open</v-icon>
                             Open
-                            <v-btn class="mailtoui" href="mailto:contact@armaldio.xyz" color="green" round>
+                            <v-btn class="mailtoui"
+                                   href="mailto:contact@armaldio.xyz"
+                                   color="green"
+                                   round>
                                 Hire me
                                 <v-icon small right dark>far fa-envelope</v-icon>
                             </v-btn>
@@ -79,7 +81,7 @@
                 </v-flex>
                 <v-flex xs6 class="text-xs-center hidden-sm-and-down">
                     <div class="d-inline-flex pt-5">
-                        <img class="code-image" src="/static/code.svg" height="250">
+                        <img class="code-image" :src="codeImg" height="250">
                     </div>
                 </v-flex>
             </v-layout>
@@ -91,8 +93,9 @@
                 Websites
             </div>
             <div class="right-shape"></div>
-            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}" :options="flickityOptions">
-                <div class="carousel-cell" v-for="(project, i) in websites">
+            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}"
+                      :options="flickityOptions">
+                <div class="carousel-cell" v-for="(project, i) in websites" :key="i">
                     <Project :key="i" :project="project"></Project>
                 </div>
             </flickity>
@@ -102,8 +105,9 @@
             <div class="display-3 py-3" id="apps">
                 Apps
             </div>
-            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}" :options="flickityOptionsInverted">
-                <div class="carousel-cell" v-for="(project, i) in apps">
+            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}"
+                      :options="flickityOptionsInverted">
+                <div class="carousel-cell" v-for="(project, i) in apps" :key="i">
                     <Project :key="i" :project="project"></Project>
                 </div>
             </flickity>
@@ -113,13 +117,15 @@
             <div class="display-3 py-3" id="other">
                 Other
             </div>
-            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}" :options="flickityOptionsCentered">
-                <div class="carousel-cell" v-for="(project, i) in other">
+            <flickity :class="{'small-card': $vuetify.breakpoint.xsOnly}"
+                      :options="flickityOptionsCentered">
+                <div class="carousel-cell"
+                     v-for="(project, i) in other" :key="i">
                     <Project :key="i" :project="project"></Project>
                 </div>
             </flickity>
 
-            <div class="split split-4 hidden-sm-and-down"></div>
+            <!--<div class="split split-4 hidden-sm-and-down"></div>-->
 
             <div class="display-3 pb-3 mt-5" id="certificates">
                 Certificates
@@ -127,86 +133,106 @@
             <div class="certificates mt-5">
                 <v-container grid-list-sm fluid>
                     <v-layout row wrap justify-center>
-                        <v-flex v-for="(image, index) in images" :key="image" xs6 lg3>
-                            <v-img :src="image"
-                                   :lazy-src="image"
-                                   class="grey lighten-2"
-                                   contain
-                                   target="_blank" href="https://ude.my/UC-ZLMRLAWU"
-                            >
-                            </v-img>
+                        <v-flex v-for="certificate in certificates"
+                                :key="certificate.image"
+                                xs12
+                                sm6
+                                lg4>
+                            <a target="_blank" :href="certificate.link">
+                                <v-img :src="certificate.image"
+                                       :lazy-src="certificate.image"
+                                       class="grey lighten-2"
+                                       contain
+                                >
+                                </v-img>
+                            </a>
                         </v-flex>
                     </v-layout>
                 </v-container>
             </div>
         </v-container>
+        <div class="split split-5 hidden-sm-and-down"></div>
     </div>
 </template>
 
 <script>
-  import Flickity from 'vue-flickity';
-  import Tab from './Tab';
-  import projects from '../projects';
-  import Project from './Project';
+import Flickity from 'vue-flickity';
+import projects from '../projects';
+import Project from '../components/Project';
 
-  export default {
-    name      : 'Home',
-    components: {
-      Flickity,
-      Tab,
-      Project,
-    },
-    data() {
-      return {
-        flickityOptions        : {
-          autoPlay       : false,
-          prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
-          pageDots       : false,
-        },
-        flickityOptionsInverted: {
-          autoPlay       : false,
-          rightToLeft    : true,
-          prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
-          pageDots       : false,
-        },
-        flickityOptionsCentered: {
-          autoPlay       : false,
-          rightToLeft    : false,
-          prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
-          pageDots       : false,
-        },
+import codeImg from '../assets/code.svg';
 
-        arrow      : false,
-        selectedTab: 0,
-        projects,
-
-        showCV: false,
-
-        certificateDialog       : false,
-        selectedImageCertificate: 0,
-
-        images: [
-          'https://udemy-certificate.s3.amazonaws.com/image/UC-ZLMRLAWU.jpg',
-        ],
-      };
-    },
-    computed  : {
-      websites() {
-        console.log(this.projects);
-        return this.projects.filter(project => project.type === 'website');
+export default {
+  name: 'Home',
+  components: {
+    Flickity,
+    Project,
+  },
+  data() {
+    return {
+      codeImg,
+      flickityOptions: {
+        autoPlay: false,
+        prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
+        pageDots: this.$vuetify.breakpoint.xsOnly,
       },
-      apps() {
-        return this.projects.filter(project => project.type === 'app');
+      flickityOptionsInverted: {
+        autoPlay: false,
+        rightToLeft: true,
+        prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
+        pageDots: this.$vuetify.breakpoint.xsOnly,
       },
-      other() {
-        return this.projects.filter(project => project.type === 'other');
+      flickityOptionsCentered: {
+        autoPlay: false,
+        rightToLeft: false,
+        prevNextButtons: !this.$vuetify.breakpoint.xsOnly,
+        pageDots: this.$vuetify.breakpoint.xsOnly,
       },
+
+      arrow: false,
+      selectedTab: 0,
+      projects,
+
+      showCV: false,
+
+      certificateDialog: false,
+      selectedImageCertificate: 0,
+
+      certificates: [
+        {
+          image: 'https://udemy-certificate.s3.amazonaws.com/image/UC-ZLMRLAWU.jpg',
+          link: 'https://ude.my/UC-ZLMRLAWU',
+        },
+      ],
+    };
+  },
+  computed: {
+    websites() {
+      return this.projects.filter(project => project.type === 'website');
     },
-  };
+    apps() {
+      return this.projects.filter(project => project.type === 'app');
+    },
+    other() {
+      return this.projects.filter(project => project.type === 'other');
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+    #clip {
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 40%);
+        background-image: linear-gradient(to top, #2196f3, #1d89e1, #177cd0, #1170bf, #0964ae);
+        z-index: 0;
+    }
+
     .carousel-cell {
         width: 350px;
         height: 350px;
@@ -267,6 +293,7 @@
 
     .profile-pic {
         border-radius: 5px;
+        z-index: 1;
     }
 
     @media only screen and (max-device-width: 768px) and (orientation: portrait) {
@@ -302,11 +329,13 @@
     }
 
     .split-3 {
-        clip-path: polygon(22% 0, 77% 0, 85% 100%, 0 100%);
+        clip-path: polygon(50% 0%, 97% 0, 80% 70%, 35% 88%, 35% 58%)
     }
 
-    .split-4 {
-        clip-path: polygon(0 0, 85% 0, 73% 21%, 37% 35%);
+    .split-5 {
+        clip-path: polygon(13% 86%, 85% 74%, 100% 100%, 0% 100%);
+        position: absolute;
+        bottom: -65px;
     }
 
     .display-3 {
@@ -315,6 +344,28 @@
 
     .icon-text-align {
         vertical-align: middle;
+    }
+
+    .small-card {
+        margin: 0 auto !important;
+    }
+
+    .flickity-page-dots {
+        bottom: 0px;
+    }
+
+    /* white circles */
+    .flickity-page-dots .dot {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        background: transparent;
+        border: 2px solid white;
+    }
+
+    /* fill-in selected dot */
+    .flickity-page-dots .dot.is-selected {
+        background: white;
     }
 
 </style>

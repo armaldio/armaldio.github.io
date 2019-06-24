@@ -1,5 +1,29 @@
 # armaldio.xyz
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1c527053-ebf0-4bfc-94d1-0179d256f762/deploy-status)](https://app.netlify.com/sites/armaldio/deploys)
+## Project setup
+```
+yarn install
+```
 
-> My personal website
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+### Compiles and minifies for production
+```
+yarn run build
+```
+
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
