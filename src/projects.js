@@ -5,6 +5,9 @@ import legion from './assets/legion.png';
 import npm from './assets/npm.png';
 import discord from './assets/discordandc2.png';
 import github from './assets/github.png';
+import georges from './assets/georges.jpg';
+import dn from './assets/dn.jpg';
+import da from './assets/da.jpg';
 
 import DiscordLiveBadge from './components/DiscordLiveBadge';
 
@@ -14,7 +17,7 @@ const projects = [
     description: 'The accountant bot for liberal workers',
     color: '#38B39F',
     link: 'https://georges.tech',
-    image: 'https://www.appvizer.fr/media/application/1868/logo/logo-georges-le-robot-comptable.png',
+    image: georges,
     pro: true,
     tags: ['web'],
     type: 'website',
@@ -24,7 +27,7 @@ const projects = [
     description: 'Your specialist in organic and natural products, creates, manufactures and distributes natural products of aromatherapy and diffusers of oils',
     color: '#389824',
     link: 'https://directnature.fr',
-    image: 'https://annuaire.laposte.fr/uploads/495/049/49504971000033/logo.jpg',
+    image: dn,
     pro: true,
     tags: ['web'],
     type: 'website',
@@ -44,7 +47,7 @@ const projects = [
     description: 'Vacation apartment rental in Lyon, France',
     color: '#389824',
     link: 'https://directappart.fr',
-    image: 'https://directappart.fr/wp-content/uploads/2017/01/DSC_2423_compressed.jpg',
+    image: da,
     pro: true,
     tags: ['web', 'wordpress'],
     type: 'website',
