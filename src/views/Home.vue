@@ -161,6 +161,7 @@ import projects from '../projects';
 import Project from '../components/Project';
 
 import codeImg from '../assets/code.svg';
+import vueCertificate from '../assets/vue-certificate.jpg';
 
 export default {
   name: 'Home',
@@ -200,7 +201,7 @@ export default {
 
       certificates: [
         {
-          image: 'https://udemy-certificate.s3.amazonaws.com/image/UC-ZLMRLAWU.jpg',
+          image: vueCertificate,
           link: 'https://ude.my/UC-ZLMRLAWU',
         },
       ],
