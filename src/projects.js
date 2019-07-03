@@ -8,6 +8,7 @@ import github from './assets/github.png';
 import georges from './assets/georges.jpg';
 import dn from './assets/dn.jpg';
 import da from './assets/da.jpg';
+import became from './assets/became.png';
 
 import DiscordLiveBadge from './components/DiscordLiveBadge';
 
@@ -20,6 +21,16 @@ const projects = [
     image: georges,
     pro: true,
     tags: ['web'],
+    type: 'website',
+  },
+  {
+    title: 'BeCAMe',
+    description: 'Photos on demand',
+    color: '#4b88a2',
+    link: 'https://becameapp.com/',
+    image: became,
+    pro: true,
+    tags: ['web', 'react', 'vue'],
     type: 'website',
   },
   {
