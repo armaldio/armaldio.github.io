@@ -102,6 +102,15 @@ const projects = [
     type: 'app',
   },
   {
+    title: 'Github',
+    description: 'Find all of my open sources projects and contributions that are not featured here!',
+    color: '#838383',
+    link: 'https://github.com/armaldio',
+    image: github,
+    tags: ['other'],
+    type: 'other',
+  },
+  {
     title: 'Discord',
     description: 'Administrator of the biggest Discord community about Construct',
     color: '#7289da',
@@ -110,15 +119,6 @@ const projects = [
     tags: ['contruct', 'other'],
     type: 'other',
     customComponent: DiscordLiveBadge,
-  },
-  {
-    title: 'Github',
-    description: 'Find all of my open sources projects and contributions that are not featured here!',
-    color: '#838383',
-    link: 'https://github.com/armaldio',
-    image: github,
-    tags: ['other'],
-    type: 'other',
   },
   {
     title: 'Construct plugins',
