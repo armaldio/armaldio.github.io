@@ -7,6 +7,9 @@ module.exports = {
     'plugin:vue/essential',
     '@vue/airbnb',
   ],
+  plugins: [
+    'vuetify',
+  ],
   rules: {
     'import/extensions'                : [ 'error', 'always', {
       js : 'never',

@@ -32,7 +32,7 @@
                             <v-btn class="mailtoui"
                                    href="mailto:contact@armaldio.xyz"
                                    color="green"
-                                   round>
+                                   rounded>
                                 Hire me
                                 <v-icon small right dark>far fa-envelope</v-icon>
                             </v-btn>
@@ -42,7 +42,7 @@
                             <v-icon large class="mr-3">fas fa-desktop</v-icon>
                             Full Stack developer
                             <v-btn color="red"
-                                   round
+                                   rounded
                                    href="https://drive.google.com/file/d/1Q0UYpDYvfpHm7XqsdgcPetq2LlJoClHW/view"
                                    target="_blank">
                                 View my resume (FR)
@@ -51,7 +51,7 @@
                         <p class="headline">
                             <v-icon large class="mr-3">fab fa-github</v-icon>
                             Open Source contributor
-                            <v-btn to="/donations" color="blue" round>
+                            <v-btn to="/donations" color="blue" rounded>
                                 Support me
                                 <v-icon small right dark>fas fa-money-bill</v-icon>
                             </v-btn>
