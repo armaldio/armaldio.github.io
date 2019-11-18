@@ -31,7 +31,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "eslint-plugin-vuetify": "^1.0.0-beta.5",
     "loader": "^2.1.1",
-    "sass": "^1.23.3",
+    "sass": "^1.23.6",
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
