@@ -1,18 +1,19 @@
 import Vue from 'vue';
 import Viewer from 'v-viewer';
-import './styles/viewer.css';
 import vuetify from './plugins/vuetify';
 import App from './App';
 import router from './router';
 import store from './store';
+
+import './styles/viewer.css';
 
 Vue.use(Viewer);
 
 Vue.config.productionTip = false;
 
 new Vue({
+  vuetify,
   router,
   store,
-  vuetify,
   render: (h) => h(App),
 }).$mount('#app');

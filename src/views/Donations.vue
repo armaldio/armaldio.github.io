@@ -4,7 +4,7 @@
       <v-icon>fas fa-long-arrow-alt-left</v-icon>
     </v-btn>
     <div class="text-center">
-      <div class="display-2 text-xs-center mb-5">✨ Making a donation ✨</div>
+      <div class="display-2 text-center mb-5">✨ Making a donation ✨</div>
       <v-expansion-panels>
         <v-expansion-panel expand-icon="mdi-menu-down">
           <v-expansion-panel-header>Why should I donate ?</v-expansion-panel-header>

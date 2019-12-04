@@ -1,5 +1,5 @@
 <template>
-    <v-layout row wrap class="text-xs-center">
+    <v-layout row wrap class="text-center">
         <v-flex class="badge" xs4 v-if="online > 0">{{ online }} online</v-flex>
     </v-layout>
 </template>

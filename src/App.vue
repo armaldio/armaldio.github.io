@@ -1,10 +1,12 @@
 <template>
   <v-app id="app-container">
-    <v-toolbar flat
-               absolute
-               :hidden="$vuetify.breakpoint.mdAndDown || $route.name !== 'home'"
-               class="toolbar">
-      <v-spacer></v-spacer>
+    <v-app-bar
+      flat
+      absolute
+      :hidden="$vuetify.breakpoint.mdAndDown || $route.name !== 'home'"
+      class="toolbar"
+    >
+      <v-spacer/>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn text rounded large @click="$vuetify.goTo('#websites')">Websites</v-btn>
         <v-btn text rounded large @click="$vuetify.goTo('#apps')">Apps</v-btn>
@@ -13,40 +15,43 @@
           Certificates
         </v-btn>
       </v-toolbar-items>
-    </v-toolbar>
+    </v-app-bar>
     <v-scale-transition>
-      <v-btn dark
-             fab
-             fixed
-             bottom
-             right
-             @click="$vuetify.goTo(0)"
-             v-show="offsetTop > 500"
+      <v-btn
+        dark
+        fab
+        fixed
+        bottom
+        right
+        @click="$vuetify.goTo(0)"
+        v-show="offsetTop > 500"
       >
         <v-icon>fas fa-chevron-up</v-icon>
       </v-btn>
     </v-scale-transition>
     <v-content>
       <v-container fluid grid-list-xl>
-        <router-view></router-view>
+        <router-view/>
       </v-container>
     </v-content>
     <v-footer height="auto">
       <v-card class="flex" elevation="0">
         <v-card-text class="grey darken-4">
-          <v-layout align-center
-                    justify-space-between
-                    :class="{'text-xs-center': $vuetify.breakpoint.smAndDown}"
-                    :column="$vuetify.breakpoint.smAndDown">
+          <v-layout
+            :class="{'text-center': $vuetify.breakpoint.smAndDown}"
+            :column="$vuetify.breakpoint.smAndDown"
+          >
             <v-flex xs3 class="text-xs-left">
               <div class="subheading"><strong>Armaldio</strong>
                 &nbsp; &copy; &nbsp; 2018 &nbsp;
               </div>
             </v-flex>
-            <v-flex xs9
-                    class="text-xs-right"
-                    :class="{'pt-3': $vuetify.breakpoint.smAndDown}">
-              <template v-for="(icon, i) in icons">
+            <v-flex
+              xs9
+              class="text-xs-right"
+              :class="{'pt-3': $vuetify.breakpoint.smAndDown}">
+              <template v-for="(icon, i) in icons"
+              >
                 <v-tooltip v-if="icon.hover" top :key="i">
                   <!-- eslint-disable-next-line -->
                   <template v-slot:activator="{ on }">
@@ -63,13 +68,15 @@
                   icon
                   :href="icon.url"
                   target="_blank"
-                  :key="i">
+                  :key="i"
+                >
                   <v-img
-                    v-if="icon.image"
+                    v-show="icon.image"
                     :max-height="24"
                     :max-width="24"
-                    :src="icon.image"/>
-                  <v-icon v-else size="24px">{{ icon.icon }}</v-icon>
+                    :src="icon.image"
+                  />
+                  <v-icon v-show="!icon.image" size="24px">{{ icon.icon }}</v-icon>
                 </v-btn>
               </template>
             </v-flex>
