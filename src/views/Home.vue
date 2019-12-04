@@ -224,7 +224,6 @@ export default {
     top: 0;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 40%);
     background-image: linear-gradient(to top, #2196f3, #1d89e1, #177cd0, #1170bf, #0964ae);
-    z-index: 0;
   }
 
   .carousel-cell {
@@ -253,6 +252,7 @@ export default {
 
   .fullHeight {
     font-size: 35px;
+    position: relative;
   }
 
   .top-padded {
@@ -287,7 +287,6 @@ export default {
 
   .profile-pic {
     border-radius: 5px;
-    z-index: 1;
   }
 
   @media only screen and (max-device-width: 768px) and (orientation: portrait) {

@@ -11,10 +11,10 @@ module.exports = {
     'vuetify',
   ],
   rules: {
-    'import/extensions'                : [ 'error', 'always', {
-      js : 'never',
+    'import/extensions': ['error', 'always', {
+      js: 'never',
       vue: 'never',
-    } ],
+    }],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
