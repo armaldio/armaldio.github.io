@@ -61,18 +61,31 @@
       </v-expansion-panels>
 
       <div class="text-center my-5">
-        <v-btn class="mx-2" color="blue" large target="_blank" href="https://www.paypal.me/armaldio">Paypal
+        <v-btn class="mx-2" color="blue" large target="_blank"
+               href="https://www.paypal.me/armaldio">Paypal
         </v-btn>
-        <v-btn class="mx-2" color="green" large target="_blank" href="https://github.com/sponsors/Armaldio">
-         Github
+        <v-btn class="mx-2" color="green" large target="_blank"
+               href="https://github.com/sponsors/Armaldio">
+          Github
         </v-btn>
       </div>
 
-      <div class="display-2 text-center mb-5">
+      <div class="display-2 text-center my-5">
         ▼ You can also register an account on Vultr.com ▼
       </div>
-      <a class="centered" href="https://www.vultr.com/?ref=7308355" target="_blank">
-        <img src="https://www.vultr.com/media/banner_1.png" width="728" height="90">
+
+      <div class="display-1 text-center my-5">
+        Regular affiliate
+      </div>
+      <a href="https://www.vultr.com/?ref=7308355"><img
+        src="https://www.vultr.com/media/banners/banner_728x90.png" width="728" height="90">
+      </a>
+
+      <div class="display-1 text-center my-5">
+        Get 50$, give 25$
+      </div>
+      <a href="https://www.vultr.com/?ref=8338818-4F">
+        <img src="https://www.vultr.com/media/banners/banner_728x90.png" width="728" height="90">
       </a>
     </div>
   </v-container>

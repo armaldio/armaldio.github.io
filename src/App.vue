@@ -32,7 +32,7 @@
       </v-container>
     </v-content>
     <v-footer height="auto">
-      <v-card class="flex" text tile>
+      <v-card class="flex" elevation="0">
         <v-card-text class="grey darken-4">
           <v-layout align-center
                     justify-space-between
