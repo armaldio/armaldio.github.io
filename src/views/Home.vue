@@ -207,13 +207,13 @@ export default {
   },
   computed: {
     websites() {
-      return this.projects.filter(project => project.type === 'website');
+      return this.projects.filter((project) => project.type === 'website');
     },
     apps() {
-      return this.projects.filter(project => project.type === 'app');
+      return this.projects.filter((project) => project.type === 'app');
     },
     other() {
-      return this.projects.filter(project => project.type === 'other');
+      return this.projects.filter((project) => project.type === 'other');
     },
   },
 };

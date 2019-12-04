@@ -48,6 +48,7 @@
                     :class="{'pt-3': $vuetify.breakpoint.smAndDown}">
               <template v-for="(icon, i) in icons">
                 <v-tooltip v-if="icon.hover" top :key="i">
+                  <!-- eslint-disable-next-line -->
                   <template v-slot:activator="{ on }">
                     <v-btn class="mx-3" dark icon>
                       <v-icon size="24px">{{ icon.icon }}</v-icon>
@@ -55,17 +56,19 @@
                   </template>
                   <span>{{ icon.url }}</span>
                 </v-tooltip>
-                <v-btn v-else
-                       class="mx-3"
-                       dark
-                       icon
-                       :href="icon.url"
-                       target="_blank"
-                       :key="i">
-                  <v-img v-if="icon.image"
-                         :max-height="24"
-                         :max-width="24"
-                         :src="icon.image"></v-img>
+                <v-btn
+                  v-else
+                  class="mx-3"
+                  dark
+                  icon
+                  :href="icon.url"
+                  target="_blank"
+                  :key="i">
+                  <v-img
+                    v-if="icon.image"
+                    :max-height="24"
+                    :max-width="24"
+                    :src="icon.image"/>
                   <v-icon v-else size="24px">{{ icon.icon }}</v-icon>
                 </v-btn>
               </template>
