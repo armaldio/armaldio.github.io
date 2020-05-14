@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow:
 
-Sitemap: http://armaldio.xyz/sitemap.xml
+Sitemap: https://armaldio.xyz/sitemap.xml
